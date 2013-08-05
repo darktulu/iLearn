@@ -1,0 +1,33 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <ui:style>
+        .rowDataWrapper {
+        }
+
+        .definition {
+            float: left;
+            width: 160px;
+            overflow: hidden;
+            clear: left;
+            text-align: right;
+            font-weight: bold;
+            line-height: 20px;
+            font-size: 12px;
+            display: inline-block;
+        }
+
+        .value {
+            line-height: 20px;
+            margin-left: 20px;
+            font-size: 12px;
+            display: inline-block;
+            float: left;
+        }
+    </ui:style>
+
+    <g:HTMLPanel styleName="{style.rowDataWrapper}">
+        <g:Label ui:field="label" styleName="{style.definition}"/>
+        <g:HTML ui:field="value" styleName="{style.value}"/>
+        <div style="clear: both;"/>
+    </g:HTMLPanel>
+</ui:UiBinder>

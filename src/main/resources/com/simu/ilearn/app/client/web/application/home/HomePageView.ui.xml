@@ -1,0 +1,15 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:cell='urn:import:com.google.gwt.user.cellview.client'
+             xmlns:s='urn:import:com.simu.ilearn.app.client.web.application.home.ui'>
+    <ui:style>
+        .wrapper {
+            padding: 20px 0 0 20px;
+        }
+    </ui:style>
+    <g:HTMLPanel addStyleNames="{style.wrapper}">
+        <s:MyEntityEditor ui:field="myEntityEditor"/>
+        <g:Button ui:field="submit" text="Submit"/>
+        <cell:CellTable ui:field="myTable"/>
+    </g:HTMLPanel>
+</ui:UiBinder>

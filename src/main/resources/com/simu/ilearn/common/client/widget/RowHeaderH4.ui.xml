@@ -1,0 +1,16 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <ui:style>
+        .header {
+            font-weight: normal;
+            font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            color: #393939;
+            display: block;
+        }
+    </ui:style>
+
+    <g:HTMLPanel>
+        <h4 class="{style.header}" ui:field="label"/>
+    </g:HTMLPanel>
+</ui:UiBinder>

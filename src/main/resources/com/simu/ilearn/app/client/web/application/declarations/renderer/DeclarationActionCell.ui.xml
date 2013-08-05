@@ -1,0 +1,10 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
+
+    <div>
+        <a href="javascript:;" class="bouton bouton-primary bouton-mini" ui:field="populate">
+            <i class="icon-cogs"/>
+            Populer
+        </a>
+    </div>
+
+</ui:UiBinder>

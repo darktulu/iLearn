@@ -1,0 +1,23 @@
+.searchButtonContainer {
+    padding-top: 20px;
+}
+
+.filterBox {
+    background-color: #efefef;
+    border-bottom: 1px solid #ddd;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.3);
+}
+
+.filterElement {
+    margin-bottom: 0px !important;
+    margin-left: 15px;
+    margin-top: 12px;
+}
+
+.axeLabel {
+    color: #747474;
+}
+
+.axeValue {
+    width: 300px;
+}

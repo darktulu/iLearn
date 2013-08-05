@@ -1,0 +1,139 @@
+.cellTableWidget {
+    width: 100%;
+    margin: auto;
+    /*border: 1px solid #ddd;*/
+    border-collapse: separate;
+    border-left: 0;
+}
+
+.cellTableFirstColumn {
+
+}
+
+.cellTableLastColumn {
+
+}
+
+.cellTableFooter {
+    border-top: 2px solid #6f7277;
+    padding: 3px 15px;
+    text-align: left;
+    color: #4b4a4a;
+    text-shadow: #ddf 1px 1px 0;
+    overflow: hidden;
+}
+
+.cellTableHeader {
+    padding: 8px;
+
+    color: #707070;
+    border-color: #DDD;
+    font-weight: bold;
+    line-height: 20px;
+
+    background: #f2f2f2;
+    background-color: #f3f3f3;
+    background-image: -moz-linear-gradient(top, #f8f8f8, #ececec);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f8f8f8), to(#ececec));
+    background-image: -webkit-linear-gradient(top, #f8f8f8, #ececec);
+    background-image: -o-linear-gradient(top, #f8f8f8, #ececec);
+    background-image: linear-gradient(to bottom, #f8f8f8, #ececec);
+    background-repeat: repeat-x;
+
+    /*border-left: 1px solid #ddd;*/
+}
+
+.cellTableCell {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    /*border-top: 1px solid #ddd;*/
+}
+
+.cellTableFirstColumnFooter {
+
+}
+
+.cellTableFirstColumnHeader {
+
+}
+
+.cellTableLastColumnFooter {
+
+}
+
+.cellTableLastColumnHeader {
+
+}
+
+.cellTableSortableHeader {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.cellTableSortableHeader:hover {
+    color: #6c6b6b;
+}
+
+.cellTableSortedHeaderAscending {
+
+}
+
+.cellTableSortedHeaderDescending {
+
+}
+
+.cellTableEvenRow {
+    background: #ffffff;
+}
+
+.cellTableEvenRowCell {
+    /*border-left: 1px solid #ddd;*/
+}
+
+.cellTableOddRow {
+    background: #f9f9f9;
+}
+
+.cellTableOddRowCell {
+    /*border-left: 1px solid #ddd;*/
+}
+
+.cellTableHoveredRow {
+    background: #f1f1f1;
+}
+
+.cellTableHoveredRowCell {
+}
+
+.cellTableKeyboardSelectedRow {
+    background: #ffc;
+}
+
+.cellTableKeyboardSelectedRowCell {
+    /*border-left: 1px solid #ddd;*/
+}
+
+.cellTableSelectedRow {
+    background: #628cd5;
+    color: white;
+    height: auto;
+    overflow: auto;
+}
+
+.cellTableSelectedRowCell {
+    /*border-left: 1px solid #ddd;*/
+}
+
+    /**
+     * The keyboard selected cell is visible over selection.
+     */
+.cellTableKeyboardSelectedCell {
+    /*border-left: 1px solid #ddd;*/
+}
+
+@sprite .cellTableLoading {
+    gwt-image: 'cellTableLoading';
+    margin: 30px;
+}

@@ -1,0 +1,8 @@
+import com.simu.ilearn.server.rules.step.QuestionAnswer;
+
+rule "test"
+    when
+        $q : QuestionAnswer(question == "Hello, how are you?")
+    then
+        $q.setAnswer("I'm good thanks.");
+end

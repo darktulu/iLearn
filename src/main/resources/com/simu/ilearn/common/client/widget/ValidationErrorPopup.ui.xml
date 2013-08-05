@@ -1,0 +1,26 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <ui:style>
+        .overlayOuter {
+            z-index: 110;
+            position: relative;
+            font-size: 11px;
+            min-width: 200px;
+            padding: 3px 8px;
+            color: #b94a48;
+            text-decoration: none;
+            background-color: #f2dede;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-right: 10px;
+            box-shadow: 1px 3px 8px rgba(0,0,0,0.2);
+        }
+    </ui:style>
+
+    <g:PopupPanel ui:field="popup" autoHideEnabled="true" modal="false"
+                  styleName="{style.overlayOuter}">
+        <g:Label ui:field="message"/>
+    </g:PopupPanel>
+</ui:UiBinder>

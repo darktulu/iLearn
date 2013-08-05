@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:drools="http://drools.org/schema/drools-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://drools.org/schema/drools-spring http://drools.org/schema/drools-spring.xsd">
+
+    <drools:kbase id="kbase">
+        <drools:resources >
+            <!--<drools:resource type="DRL" source="classpath:META-INF/rules/helloWorld.drl" />-->
+        </drools:resources>
+    </drools:kbase>
+
+    <drools:ksession type="stateless" kbase="kbase" id="ksession" />
+
+    <bean id="droolsService" class="com.simu.ilearn.server.service.impl.DroolsServiceImpl" >
+        <property name="kbase" ref="kbase" />
+        <property name="ksession" ref="ksession" />
+    </bean>
+</beans>

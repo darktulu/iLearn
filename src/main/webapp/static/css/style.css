@@ -1,0 +1,1695 @@
+
+.bouton {
+    display: inline-block;
+    color: #FFF !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
+    background-image: none !important;
+    border: 5px solid;
+    border-radius: 0;
+    box-shadow: none !important;
+    -webkit-transition: all ease .15s;
+    -moz-transition: all ease .15s;
+    -o-transition: all ease .15s;
+    transition: all ease .15s;
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 0;
+    position: relative;
+    padding: 0 12px 1px;
+    line-height: 32px;
+    font-size: 14px
+}
+
+.bouton-large {
+    padding: 0 14px 1px;
+    line-height: 38px;
+    border-width: 6px;
+    font-size: 16px
+}
+
+.bouton-small {
+    padding: 0 8px;
+    line-height: 24px;
+    border-width: 4px;
+    font-size: 13px
+}
+
+.bouton-mini {
+    padding: 0 5px;
+    line-height: 22px;
+    border-width: 2px;
+    font-size: 12px
+}
+
+.bouton-minier {
+    padding: 0 4px;
+    line-height: 18px;
+    border-width: 1px;
+    font-size: 11px
+}
+
+button.bouton:active {
+    top: 1px;
+    left: 1px
+}
+
+.bouton, .bouton-default {
+    background-color: #abbac3 !important;
+    border-color: #abbac3
+}
+
+.bouton:hover, .bouton-default:hover {
+    background-color: #8b9aa3 !important;
+    text-decoration: none;
+}
+
+.bouton.no-border:hover, .bouton-default.no-border:hover {
+    border-color: #8b9aa3
+}
+
+.bouton.no-hover:hover, .bouton-default.no-hover:hover {
+    background-color: #abbac3 !important
+}
+
+.bouton.active, .bouton-default.active {
+    background-color: #9baab3 !important;
+    border-color: #8a9ba6
+}
+
+.bouton.no-border.active, .bouton-default.no-border.active {
+    background-color: #92a3ac !important;
+    border-color: #92a3ac
+}
+
+.bouton.disabled, .bouton-default.disabled, .bouton[disabled], .bouton-default[disabled] {
+    background-color: #abbac3 !important
+}
+
+.bouton-primary {
+    background-color: #2283c5 !important;
+    border-color: #2283c5
+}
+
+.bouton-primary:hover {
+    background-color: #045e9f !important
+}
+
+.bouton-primary.no-border:hover {
+    border-color: #045e9f
+}
+
+.bouton-primary.no-hover:hover {
+    background-color: #2283c5 !important
+}
+
+.bouton-primary.active {
+    background-color: #1371b2 !important;
+    border-color: #105f96
+}
+
+.bouton-primary.no-border.active {
+    background-color: #1268a4 !important;
+    border-color: #1268a4
+}
+
+.bouton-primary.disabled, .bouton-primary[disabled] {
+    background-color: #2283c5 !important
+}
+
+.bouton-info {
+    background-color: #6fb3e0 !important;
+    border-color: #6fb3e0
+}
+
+.bouton-info:hover {
+    background-color: #4f99c6 !important
+}
+
+.bouton-info.no-border:hover {
+    border-color: #4f99c6
+}
+
+.bouton-info.no-hover:hover {
+    background-color: #6fb3e0 !important
+}
+
+.bouton-info.active {
+    background-color: #5fa6d3 !important;
+    border-color: #4799cc
+}
+
+.bouton-info.no-border.active {
+    background-color: #539fd0 !important;
+    border-color: #539fd0
+}
+
+.bouton-info.disabled, .bouton-info[disabled] {
+    background-color: #6fb3e0 !important
+}
+
+.bouton-success {
+    background-color: #87b87f !important;
+    border-color: #87b87f
+}
+
+.bouton-success:hover {
+    background-color: #629b58 !important
+}
+
+.bouton-success.no-border:hover {
+    border-color: #629b58
+}
+
+.bouton-success.no-hover:hover {
+    background-color: #87b87f !important
+}
+
+.bouton-success.active {
+    background-color: #75aa6c !important;
+    border-color: #649c5a
+}
+
+.bouton-success.no-border.active {
+    background-color: #6ba462 !important;
+    border-color: #6ba462
+}
+
+.bouton-success.disabled, .bouton-success[disabled] {
+    background-color: #87b87f !important
+}
+
+.bouton-warning {
+    background-color: #ffb752 !important;
+    border-color: #ffb752
+}
+
+.bouton-warning:hover {
+    background-color: #e59729 !important
+}
+
+.bouton-warning.no-border:hover {
+    border-color: #e59729
+}
+
+.bouton-warning.no-hover:hover {
+    background-color: #ffb752 !important
+}
+
+.bouton-warning.active {
+    background-color: #f2a73e !important;
+    border-color: #f09a21
+}
+
+.bouton-warning.no-border.active {
+    background-color: #f1a02f !important;
+    border-color: #f1a02f
+}
+
+.bouton-warning.disabled, .bouton-warning[disabled] {
+    background-color: #ffb752 !important
+}
+
+.bouton-danger {
+    background-color: #d15b47 !important;
+    border-color: #d15b47
+}
+
+.bouton-danger:hover {
+    background-color: #b74635 !important
+}
+
+.bouton-danger.no-border:hover {
+    border-color: #b74635
+}
+
+.bouton-danger.no-hover:hover {
+    background-color: #d15b47 !important
+}
+
+.bouton-danger.active {
+    background-color: #c4513e !important;
+    border-color: #ae4635
+}
+
+.bouton-danger.no-border.active {
+    background-color: #ba4b39 !important;
+    border-color: #ba4b39
+}
+
+.bouton-danger.disabled, .bouton-danger[disabled] {
+    background-color: #d15b47 !important
+}
+
+.bouton-inverse {
+    background-color: #555 !important;
+    border-color: #555
+}
+
+.bouton-inverse:hover {
+    background-color: #303030 !important
+}
+
+.bouton-inverse.no-border:hover {
+    border-color: #303030
+}
+
+.bouton-inverse.no-hover:hover {
+    background-color: #555 !important
+}
+
+.bouton-inverse.active {
+    background-color: #434343 !important;
+    border-color: #333
+}
+
+.bouton-inverse.no-border.active {
+    background-color: #3b3b3b !important;
+    border-color: #3b3b3b
+}
+
+.bouton-inverse.disabled, .bouton-inverse[disabled] {
+    background-color: #555 !important
+}
+
+.bouton-pink {
+    background-color: #d6487e !important;
+    border-color: #d6487e
+}
+
+.bouton-pink:hover {
+    background-color: #b73766 !important
+}
+
+.bouton-pink.no-border:hover {
+    border-color: #b73766
+}
+
+.bouton-pink.no-hover:hover {
+    background-color: #d6487e !important
+}
+
+.bouton-pink.active {
+    background-color: #c74072 !important;
+    border-color: #b33564
+}
+
+.bouton-pink.no-border.active {
+    background-color: #be386a !important;
+    border-color: #be386a
+}
+
+.bouton-pink.disabled, .bouton-pink[disabled] {
+    background-color: #d6487e !important
+}
+
+.bouton-purple {
+    background-color: #9585bf !important;
+    border-color: #9585bf
+}
+
+.bouton-purple:hover {
+    background-color: #7461aa !important
+}
+
+.bouton-purple.no-border:hover {
+    border-color: #7461aa
+}
+
+.bouton-purple.no-hover:hover {
+    background-color: #9585bf !important
+}
+
+.bouton-purple.active {
+    background-color: #8573b5 !important;
+    border-color: #735faa
+}
+
+.bouton-purple.no-border.active {
+    background-color: #7c69af !important;
+    border-color: #7c69af
+}
+
+.bouton-purple.disabled, .bouton-purple[disabled] {
+    background-color: #9585bf !important
+}
+
+.bouton-grey {
+    background-color: #a0a0a0 !important;
+    border-color: #a0a0a0
+}
+
+.bouton-grey:hover {
+    background-color: #888 !important
+}
+
+.bouton-grey.no-border:hover {
+    border-color: #888
+}
+
+.bouton-grey.no-hover:hover {
+    background-color: #a0a0a0 !important
+}
+
+.bouton-grey.active {
+    background-color: #949494 !important;
+    border-color: #858585
+}
+
+.bouton-grey.no-border.active {
+    background-color: #8c8c8c !important;
+    border-color: #8c8c8c
+}
+
+.bouton-grey.disabled, .bouton-grey[disabled] {
+    background-color: #a0a0a0 !important
+}
+
+.bouton-yellow {
+    background-color: #fee188 !important;
+    border-color: #fee188;
+    color: #963 !important;
+    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4) !important
+}
+
+.bouton-yellow:hover {
+    background-color: #f7d05b !important
+}
+
+.bouton-yellow.no-border:hover {
+    border-color: #f7d05b
+}
+
+.bouton-yellow.no-hover:hover {
+    background-color: #fee188 !important
+}
+
+.bouton-yellow.active {
+    background-color: #fbd972 !important;
+    border-color: #fad054
+}
+
+.bouton-yellow.no-border.active {
+    background-color: #fad463 !important;
+    border-color: #fad463
+}
+
+.bouton-yellow.disabled, .bouton-yellow[disabled] {
+    background-color: #fee188 !important
+}
+
+.bouton-light {
+    background-color: #e7e7e7 !important;
+    border-color: #e7e7e7;
+    color: #888 !important;
+    text-shadow: 0 -1px 0 rgba(250, 250, 250, 0.25) !important
+}
+
+.bouton-light:hover {
+    background-color: #d9d9d9 !important
+}
+
+.bouton-light.no-border:hover {
+    border-color: #d9d9d9
+}
+
+.bouton-light.no-hover:hover {
+    background-color: #e7e7e7 !important
+}
+
+.bouton-light.active {
+    background-color: #e0e0e0 !important;
+    border-color: #d1d1d1
+}
+
+.bouton-light.no-border.active {
+    background-color: #d8d8d8 !important;
+    border-color: #d8d8d8
+}
+
+.bouton-light.disabled, .bouton-light[disabled] {
+    background-color: #e7e7e7 !important
+}
+
+.bouton-light.bouton-mini:after {
+    left: -2px;
+    right: -2px;
+    top: -2px;
+    bottom: -2px
+}
+
+.bouton-light.bouton-small:after {
+    left: -4px;
+    right: -4px;
+    top: -4px;
+    bottom: -4px
+}
+
+.bouton-light.bouton-large:after {
+    left: -6px;
+    right: -6px;
+    top: -6px;
+    bottom: -6px
+}
+
+.bouton.disabled.active, .bouton[disabled].active, .bouton.disabled:focus, .bouton[disabled]:focus, .bouton.disabled:active, .bouton[disabled]:active {
+    outline: 0
+}
+
+.bouton.disabled:active, .bouton[disabled]:active {
+    top: 0;
+    left: 0
+}
+
+.bouton.active {
+    color: #efe5b5
+}
+
+.bouton.active:after {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid #efe5b5;
+    left: -4px;
+    right: -4px;
+    bottom: -4px
+}
+
+.bouton.active.bouton-small:after {
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-bottom-width: 1px
+}
+
+.bouton.active.bouton-large:after {
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-bottom-width: 1px
+}
+
+.bouton.active.bouton-mini:after, .bouton.active.bouton-minier:after {
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-bottom-width: 1px
+}
+
+.bouton.active.bouton-yellow:after {
+    border-bottom-color: #c96338
+}
+
+.bouton.active.bouton-light {
+    color: #515151
+}
+
+.bouton.active.bouton-light:after {
+    border-bottom-color: #b5b5b5
+}
+
+.bouton>[class*="icon-"] {
+    display: inline;
+    margin-right: 4px
+}
+
+.bouton>[class*="icon-"].icon-on-right {
+    margin-right: 0;
+    margin-left: 4px
+}
+
+.bouton>.icon-only[class*="icon-"] {
+    margin: 0;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0
+}
+
+.bouton-large>[class*="icon-"] {
+    margin-right: 6px
+}
+
+.bouton-large>[class*="icon-"].icon-on-right {
+    margin-right: 0;
+    margin-left: 6px
+}
+
+.bouton-small>[class*="icon-"] {
+    margin-right: 3px
+}
+
+.bouton-small>[class*="icon-"].icon-on-right {
+    margin-right: 0;
+    margin-left: 3px
+}
+
+.bouton-mini>[class*="icon-"], .bouton-minier>[class*="icon-"] {
+    margin-right: 2px
+}
+
+.bouton-mini>[class*="icon-"].icon-on-right, .bouton-minier>[class*="icon-"].icon-on-right {
+    margin-right: 0;
+    margin-left: 2px
+}
+
+.bouton.bouton-link {
+    border: none !important;
+    background: transparent none !important;
+    color: #08c !important;
+    text-shadow: none !important;
+    padding: 4px 12px !important;
+    line-height: 20px !important
+}
+
+.bouton.bouton-link:hover {
+    background: none !important;
+    text-shadow: none !important
+}
+
+.bouton.bouton-link.active {
+    background: none !important;
+    text-decoration: underline;
+    color: #009ceb !important
+}
+
+.bouton.bouton-link.active:after {
+    display: none
+}
+
+.bouton.bouton-link.disabled, .bouton.bouton-link[disabled] {
+    background: 0;
+    opacity: .65
+}
+
+.bouton.bouton-link.disabled:hover, .bouton.bouton-link[disabled]:hover {
+    background: none !important;
+    text-decoration: none !important
+}
+
+.bouton-group>.bouton, .bouton-group>.bouton+.bouton {
+    margin: 0 1px 0 0
+}
+
+.bouton-group>.bouton:first-child {
+    margin: 0 1px 0 0
+}
+
+.bouton-group>.bouton:first-child, .bouton-group>.bouton:last-child {
+    border-radius: 0
+}
+
+.bouton-group>.bouton>.caret {
+    margin-top: 15px;
+    margin-left: 1px;
+    border-width: 5px;
+    border-top-color: #FFF
+}
+
+.bouton-group>.bouton.bouton-small>.caret {
+    margin-top: 10px;
+    border-width: 4px
+}
+
+.bouton-group>.bouton.bouton-large>.caret {
+    margin-top: 18px;
+    border-width: 6px
+}
+
+.bouton-group>.bouton.bouton-mini>.caret {
+    margin-top: 9px;
+    border-width: 4px
+}
+
+.bouton-group>.bouton.bouton-minier>.caret {
+    margin-top: 7px;
+    border-width: 3px
+}
+
+.bouton-group>.bouton+.bouton.dropdown-toggle {
+    padding-right: 3px;
+    padding-left: 3px
+}
+
+.bouton-group>.bouton+.bouton-large.dropdown-toggle {
+    padding-right: 4px;
+    padding-left: 4px
+}
+
+.bouton-group .dropdown-toggle {
+    border-radius: 0
+}
+
+.bouton-group>.bouton, .bouton-group+.bouton {
+    margin: 0 1px 0 0;
+    border-width: 3px !important
+}
+
+.bouton-group>.bouton.active:after, .bouton-group+.bouton.active:after {
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-bottom-width: 1px
+}
+
+.bouton-group>.bouton-large, .bouton-group+.bouton-large {
+    border-width: 4px !important
+}
+
+.bouton-group>.bouton-large.active:after, .bouton-group+.bouton-large.active:after {
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-bottom-width: 1px
+}
+
+.bouton-group>.bouton-small, .bouton-group+.bouton-small {
+    border-width: 2px !important
+}
+
+.bouton-group>.bouton-small.active:after, .bouton-group+.bouton-small.active:after {
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-bottom-width: 1px
+}
+
+.bouton-group>.bouton-mini, .bouton-group+.bouton-mini {
+    border-width: 1px !important
+}
+
+.bouton-group>.bouton-mini.active:after, .bouton-group+.bouton-mini.active:after {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom-width: 1px
+}
+
+.bouton-group>.bouton-minier, .bouton-group+.bouton-minier {
+    border-width: 0 !important
+}
+
+.bouton-group>.bouton-minier.active:after, .bouton-group+.bouton-minier.active:after {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom-width: 1px
+}
+
+.bouton-group-vertical>.bouton, .bouton-group-vertical>.bouton+.bouton {
+    margin: 1px 0 0
+}
+
+.bouton-group-vertical>.bouton:first-child {
+    margin-right: 0
+}
+
+.bouton.bouton-app {
+    display: inline-block;
+    width: 100px;
+    margin: 2px;
+    position: relative;
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0 -1px -1px rgba(0, 0, 0, 0.2) !important;
+    border: 0;
+    border-radius: 12px;
+    padding: 12px 0 8px
+}
+
+.bouton-app, .bouton-app.bouton-default, .bouton-app.no-hover:hover, .bouton-app.bouton-default.no-hover:hover, .bouton-app.disabled:hover, .bouton-app.bouton-default.disabled:hover {
+    background: #b4c2cc !important;
+    background-color: #b5c3ce !important;
+    background-image: -moz-linear-gradient(top, #bcc9d5, #abbac3) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bcc9d5), to(#abbac3)) !important;
+    background-image: -webkit-linear-gradient(top, #bcc9d5, #abbac3) !important;
+    background-image: -o-linear-gradient(top, #bcc9d5, #abbac3) !important;
+    background-image: linear-gradient(to bottom, #bcc9d5, #abbac3) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbcc9d5', endColorstr='#ffabbac3', GradientType=0) !important
+}
+
+.bouton-app:hover, .bouton-app.bouton-default:hover {
+    background: #9baebc !important;
+    background-color: #9dafbe !important;
+    background-image: -moz-linear-gradient(top, #a3b5c5, #93a6b2) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#a3b5c5), to(#93a6b2)) !important;
+    background-image: -webkit-linear-gradient(top, #a3b5c5, #93a6b2) !important;
+    background-image: -o-linear-gradient(top, #a3b5c5, #93a6b2) !important;
+    background-image: linear-gradient(to bottom, #a3b5c5, #93a6b2) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa3b5c5', endColorstr='#ff93a6b2', GradientType=0) !important
+}
+
+.bouton-app.bouton-primary, .bouton-app.bouton-primary.no-hover:hover, .bouton-app.bouton-primary.disabled:hover {
+    background: #2a8bcc !important;
+    background-color: #2d8ece !important;
+    background-image: -moz-linear-gradient(top, #3b98d6, #197ec1) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3b98d6), to(#197ec1)) !important;
+    background-image: -webkit-linear-gradient(top, #3b98d6, #197ec1) !important;
+    background-image: -o-linear-gradient(top, #3b98d6, #197ec1) !important;
+    background-image: linear-gradient(to bottom, #3b98d6, #197ec1) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b98d6', endColorstr='#ff197ec1', GradientType=0) !important
+}
+
+.bouton-app.bouton-primary:hover {
+    background: #1d6fa6 !important;
+    background-color: #1f72a9 !important;
+    background-image: -moz-linear-gradient(top, #267eb8, #136194) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#267eb8), to(#136194)) !important;
+    background-image: -webkit-linear-gradient(top, #267eb8, #136194) !important;
+    background-image: -o-linear-gradient(top, #267eb8, #136194) !important;
+    background-image: linear-gradient(to bottom, #267eb8, #136194) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff267eb8', endColorstr='#ff136194', GradientType=0) !important
+}
+
+.bouton-app.bouton-info, .bouton-app.bouton-info.no-hover:hover, .bouton-app.bouton-info.disabled:hover {
+    background: #68adde !important;
+    background-color: #6baedf !important;
+    background-image: -moz-linear-gradient(top, #75b5e6, #5ba4d5) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#75b5e6), to(#5ba4d5)) !important;
+    background-image: -webkit-linear-gradient(top, #75b5e6, #5ba4d5) !important;
+    background-image: -o-linear-gradient(top, #75b5e6, #5ba4d5) !important;
+    background-image: linear-gradient(to bottom, #75b5e6, #5ba4d5) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff75b5e6', endColorstr='#ff5ba4d5', GradientType=0) !important
+}
+
+.bouton-app.bouton-info:hover {
+    background: #3f96d4 !important;
+    background-color: #4197d6 !important;
+    background-image: -moz-linear-gradient(top, #4a9ede, #348dc9) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4a9ede), to(#348dc9)) !important;
+    background-image: -webkit-linear-gradient(top, #4a9ede, #348dc9) !important;
+    background-image: -o-linear-gradient(top, #4a9ede, #348dc9) !important;
+    background-image: linear-gradient(to bottom, #4a9ede, #348dc9) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4a9ede', endColorstr='#ff348dc9', GradientType=0) !important
+}
+
+.bouton-app.bouton-success, .bouton-app.bouton-success.no-hover:hover, .bouton-app.bouton-success.disabled:hover {
+    background: #86b558 !important;
+    background-color: #87b75a !important;
+    background-image: -moz-linear-gradient(top, #8ebf60, #7daa50) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#8ebf60), to(#7daa50)) !important;
+    background-image: -webkit-linear-gradient(top, #8ebf60, #7daa50) !important;
+    background-image: -o-linear-gradient(top, #8ebf60, #7daa50) !important;
+    background-image: linear-gradient(to bottom, #8ebf60, #7daa50) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8ebf60', endColorstr='#ff7daa50', GradientType=0) !important
+}
+
+.bouton-app.bouton-success:hover {
+    background: #6c9842 !important;
+    background-color: #6e9b42 !important;
+    background-image: -moz-linear-gradient(top, #74a844, #648740) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#74a844), to(#648740)) !important;
+    background-image: -webkit-linear-gradient(top, #74a844, #648740) !important;
+    background-image: -o-linear-gradient(top, #74a844, #648740) !important;
+    background-image: linear-gradient(to bottom, #74a844, #648740) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff74a844', endColorstr='#ff648740', GradientType=0) !important
+}
+
+.bouton-app.bouton-danger, .bouton-app.bouton-danger.no-hover:hover, .bouton-app.bouton-danger.disabled:hover {
+    background: #d3413b !important;
+    background-color: #d3463f !important;
+    background-image: -moz-linear-gradient(top, #d55b52, #d12723) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d55b52), to(#d12723)) !important;
+    background-image: -webkit-linear-gradient(top, #d55b52, #d12723) !important;
+    background-image: -o-linear-gradient(top, #d55b52, #d12723) !important;
+    background-image: linear-gradient(to bottom, #d55b52, #d12723) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd55b52', endColorstr='#ffd12723', GradientType=0) !important
+}
+
+.bouton-app.bouton-danger:hover {
+    background: #b52c26 !important;
+    background-color: #b82f28 !important;
+    background-image: -moz-linear-gradient(top, #c43a30, #a51f1c) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c43a30), to(#a51f1c)) !important;
+    background-image: -webkit-linear-gradient(top, #c43a30, #a51f1c) !important;
+    background-image: -o-linear-gradient(top, #c43a30, #a51f1c) !important;
+    background-image: linear-gradient(to bottom, #c43a30, #a51f1c) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc43a30', endColorstr='#ffa51f1c', GradientType=0) !important
+}
+
+.bouton-app.bouton-warning, .bouton-app.bouton-warning.no-hover:hover, .bouton-app.bouton-warning.disabled:hover {
+    background: #ffb44b !important;
+    background-color: #ffb650 !important;
+    background-image: -moz-linear-gradient(top, #ffbf66, #ffa830) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffbf66), to(#ffa830)) !important;
+    background-image: -webkit-linear-gradient(top, #ffbf66, #ffa830) !important;
+    background-image: -o-linear-gradient(top, #ffbf66, #ffa830) !important;
+    background-image: linear-gradient(to bottom, #ffbf66, #ffa830) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffbf66', endColorstr='#ffffa830', GradientType=0) !important
+}
+
+.bouton-app.bouton-warning:hover {
+    background: #fe9e19 !important;
+    background-color: #fea01f !important;
+    background-image: -moz-linear-gradient(top, #fa3, #fc9200) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fa3), to(#fc9200)) !important;
+    background-image: -webkit-linear-gradient(top, #fa3, #fc9200) !important;
+    background-image: -o-linear-gradient(top, #fa3, #fc9200) !important;
+    background-image: linear-gradient(to bottom, #fa3, #fc9200) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffaa33', endColorstr='#fffc9200', GradientType=0) !important
+}
+
+.bouton-app.bouton-purple, .bouton-app.bouton-purple.no-hover:hover, .bouton-app.bouton-purple.disabled:hover {
+    background: #9889c1 !important;
+    background-color: #9b8cc4 !important;
+    background-image: -moz-linear-gradient(top, #a696ce, #8a7cb4) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#a696ce), to(#8a7cb4)) !important;
+    background-image: -webkit-linear-gradient(top, #a696ce, #8a7cb4) !important;
+    background-image: -o-linear-gradient(top, #a696ce, #8a7cb4) !important;
+    background-image: linear-gradient(to bottom, #a696ce, #8a7cb4) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa696ce', endColorstr='#ff8a7cb4', GradientType=0) !important
+}
+
+.bouton-app.bouton-purple:hover {
+    background: #7b68af !important;
+    background-color: #7e6ab2 !important;
+    background-image: -moz-linear-gradient(top, #8973be, #6d5ca1) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#8973be), to(#6d5ca1)) !important;
+    background-image: -webkit-linear-gradient(top, #8973be, #6d5ca1) !important;
+    background-image: -o-linear-gradient(top, #8973be, #6d5ca1) !important;
+    background-image: linear-gradient(to bottom, #8973be, #6d5ca1) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8973be', endColorstr='#ff6d5ca1', GradientType=0) !important
+}
+
+.bouton-app.bouton-pink, .bouton-app.bouton-pink.no-hover:hover, .bouton-app.bouton-pink.disabled:hover {
+    background: #d54c7e !important;
+    background-color: #d64f81 !important;
+    background-image: -moz-linear-gradient(top, #db5e8c, #ce3970) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#db5e8c), to(#ce3970)) !important;
+    background-image: -webkit-linear-gradient(top, #db5e8c, #ce3970) !important;
+    background-image: -o-linear-gradient(top, #db5e8c, #ce3970) !important;
+    background-image: linear-gradient(to bottom, #db5e8c, #ce3970) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdb5e8c', endColorstr='#ffce3970', GradientType=0) !important
+}
+
+.bouton-app.bouton-pink:hover {
+    background: #be2f64 !important;
+    background-color: #c23066 !important;
+    background-image: -moz-linear-gradient(top, #d2346e, #aa2a59) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d2346e), to(#aa2a59)) !important;
+    background-image: -webkit-linear-gradient(top, #d2346e, #aa2a59) !important;
+    background-image: -o-linear-gradient(top, #d2346e, #aa2a59) !important;
+    background-image: linear-gradient(to bottom, #d2346e, #aa2a59) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd2346e', endColorstr='#ffaa2a59', GradientType=0) !important
+}
+
+.bouton-app.bouton-inverse, .bouton-app.bouton-inverse.no-hover:hover, .bouton-app.bouton-inverse.disabled:hover {
+    background: #444 !important;
+    background-color: #474747 !important;
+    background-image: -moz-linear-gradient(top, #555, #333) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#555), to(#333)) !important;
+    background-image: -webkit-linear-gradient(top, #555, #333) !important;
+    background-image: -o-linear-gradient(top, #555, #333) !important;
+    background-image: linear-gradient(to bottom, #555, #333) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff555555', endColorstr='#ff333333', GradientType=0) !important
+}
+
+.bouton-app.bouton-inverse:hover {
+    background: #2b2b2b !important;
+    background-color: #2e2e2e !important;
+    background-image: -moz-linear-gradient(top, #3b3b3b, #1a1a1a) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3b3b3b), to(#1a1a1a)) !important;
+    background-image: -webkit-linear-gradient(top, #3b3b3b, #1a1a1a) !important;
+    background-image: -o-linear-gradient(top, #3b3b3b, #1a1a1a) !important;
+    background-image: linear-gradient(to bottom, #3b3b3b, #1a1a1a) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b3b3b', endColorstr='#ff1a1a1a', GradientType=0) !important
+}
+
+.bouton-app.bouton-grey, .bouton-app.bouton-grey.no-hover:hover, .bouton-app.bouton-grey.disabled:hover {
+    background: #797979 !important;
+    background-color: #7c7c7c !important;
+    background-image: -moz-linear-gradient(top, #898989, #696969) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#898989), to(#696969)) !important;
+    background-image: -webkit-linear-gradient(top, #898989, #696969) !important;
+    background-image: -o-linear-gradient(top, #898989, #696969) !important;
+    background-image: linear-gradient(to bottom, #898989, #696969) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff898989', endColorstr='#ff696969', GradientType=0) !important
+}
+
+.bouton-app.bouton-grey:hover {
+    background: #6c6c6c !important;
+    background-color: #6f6f6f !important;
+    background-image: -moz-linear-gradient(top, #7c7c7c, #5c5c5c) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#7c7c7c), to(#5c5c5c)) !important;
+    background-image: -webkit-linear-gradient(top, #7c7c7c, #5c5c5c) !important;
+    background-image: -o-linear-gradient(top, #7c7c7c, #5c5c5c) !important;
+    background-image: linear-gradient(to bottom, #7c7c7c, #5c5c5c) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7c7c7c', endColorstr='#ff5c5c5c', GradientType=0) !important
+}
+
+.bouton-app.bouton-light {
+    color: #5a5a5a !important;
+    text-shadow: 0 1px 1px #EEE !important
+}
+
+.bouton-app.bouton-light, .bouton-app.bouton-light.no-hover:hover, .bouton-app.bouton-light.disabled:hover {
+    background: #ededed !important;
+    background-color: #eee !important;
+    background-image: -moz-linear-gradient(top, #f4f4f4, #e6e6e6) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#e6e6e6)) !important;
+    background-image: -webkit-linear-gradient(top, #f4f4f4, #e6e6e6) !important;
+    background-image: -o-linear-gradient(top, #f4f4f4, #e6e6e6) !important;
+    background-image: linear-gradient(to bottom, #f4f4f4, #e6e6e6) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff4f4f4', endColorstr='#ffe6e6e6', GradientType=0) !important
+}
+
+.bouton-app.bouton-light:hover {
+    background: #e0e0e0 !important;
+    background-color: #e2e2e2 !important;
+    background-image: -moz-linear-gradient(top, #e7e7e7, #d9d9d9) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e7e7e7), to(#d9d9d9)) !important;
+    background-image: -webkit-linear-gradient(top, #e7e7e7, #d9d9d9) !important;
+    background-image: -o-linear-gradient(top, #e7e7e7, #d9d9d9) !important;
+    background-image: linear-gradient(to bottom, #e7e7e7, #d9d9d9) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe7e7e7', endColorstr='#ffd9d9d9', GradientType=0) !important
+}
+
+.bouton-app.bouton-light, .bouton-app.bouton-light.no-hover:hover {
+    border: 2px solid #DDD
+}
+
+.bouton-app.bouton-light.bouton-mini {
+    width: 64px;
+    padding-bottom: 6px
+}
+
+.bouton-app.bouton-light:hover {
+    border-color: #d8d8d8
+}
+
+.bouton-app.bouton-yellow {
+    color: #963 !important;
+    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4) !important;
+    border: 2px solid #fee188
+}
+
+.bouton-app.bouton-yellow, .bouton-app.bouton-yellow.no-hover:hover, .bouton-app.bouton-yellow.disabled:hover {
+    background: #fee088 !important;
+    background-color: #fee18d !important;
+    background-image: -moz-linear-gradient(top, #ffe8a5, #fcd76a) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffe8a5), to(#fcd76a)) !important;
+    background-image: -webkit-linear-gradient(top, #ffe8a5, #fcd76a) !important;
+    background-image: -o-linear-gradient(top, #ffe8a5, #fcd76a) !important;
+    background-image: linear-gradient(to bottom, #ffe8a5, #fcd76a) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffe8a5', endColorstr='#fffcd76a', GradientType=0) !important
+}
+
+.bouton-app.bouton-yellow:hover {
+    background: #fdd96e !important;
+    background-color: #fedb74 !important;
+    background-image: -moz-linear-gradient(top, #ffe18b, #fbd051) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffe18b), to(#fbd051)) !important;
+    background-image: -webkit-linear-gradient(top, #ffe18b, #fbd051) !important;
+    background-image: -o-linear-gradient(top, #ffe18b, #fbd051) !important;
+    background-image: linear-gradient(to bottom, #ffe18b, #fbd051) !important;
+    background-repeat: repeat-x !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffe18b', endColorstr='#fffbd051', GradientType=0) !important
+}
+
+.bouton-app.bouton-yellow, .bouton-app.bouton-yellow.no-hover:hover {
+    border: 2px solid #fee188
+}
+
+.bouton-app.bouton-yellow:hover {
+    border-color: #fed760
+}
+
+.bouton.bouton-app.bouton-small {
+    width: 80px;
+    font-size: 16px;
+    border-radius: 10px;
+    padding-bottom: 9px
+}
+
+.bouton.bouton-app.bouton-mini {
+    width: 64px;
+    font-size: 15px;
+    border-radius: 8px;
+    padding-bottom: 7px;
+    padding-top: 8px
+}
+
+.bouton.bouton-app>[class*=icon] {
+    display: block;
+    font-size: 42px;
+    margin: 0 0 4px;
+    line-height: 36px;
+    min-width: 0;
+    padding: 0
+}
+
+.bouton.bouton-app.bouton-small>[class*=icon] {
+    display: block;
+    font-size: 32px;
+    line-height: 30px;
+    margin: 0 0 3px
+}
+
+.bouton.bouton-app.bouton-mini>[class*=icon] {
+    display: block;
+    font-size: 24px;
+    line-height: 24px;
+    margin: 0
+}
+
+.bouton.bouton-app.no-radius {
+    border-radius: 0
+}
+
+.bouton.bouton-app.radius-4 {
+    border-radius: 4px
+}
+
+.bouton.bouton-app>.badge, .bouton.bouton-app>.label {
+    position: absolute !important;
+    top: -2px;
+    right: -2px;
+    padding: 1px 3px;
+    text-align: center;
+    font-size: 12px
+}
+
+.bouton.bouton-app>.badge.badge-right, .bouton.bouton-app>.label.badge-right, .bouton.bouton-app>.badge.label-right, .bouton.bouton-app>.label.label-right {
+    right: auto;
+    left: -2px
+}
+
+.bouton.bouton-app>.label {
+    padding: 1px 6px 3px;
+    font-size: 13px
+}
+
+.bouton.bouton-app.radius-4>.badge, .bouton.bouton-app.no-radius>.badge {
+    border-radius: 3px
+}
+
+.bouton.bouton-app.radius-4>.badge.no-radius, .bouton.bouton-app.no-radius>.badge.no-radius {
+    border-radius: 0
+}
+
+.bouton.bouton-app.active {
+    color: #fff
+}
+
+.bouton.bouton-app.active:after {
+    display: none
+}
+
+.bouton.bouton-app.active.bouton-yellow {
+    color: #963;
+    border-color: #fee188
+}
+
+.bouton.bouton-app.active.bouton-light {
+    color: #515151
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    border-width: 1px;
+    color: #858585;
+    background-color: #fff;
+    border-color: #d5d5d5;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition-duration: .1s;
+    -moz-transition-duration: .1s;
+    -o-transition-duration: .1s;
+    transition-duration: .1s
+}
+
+textarea:hover, input[type="text"]:hover, input[type="password"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="date"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover, input[type="number"]:hover, input[type="email"]:hover, input[type="url"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="color"]:hover {
+    border-color: #b5b5b5
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: #696969;
+    border-color: #f59942;
+    background-color: #fff
+}
+
+input.block {
+    display: block;
+    margin-bottom: 9px
+}
+
+textarea.autosize-transition {
+    -webkit-transition-duration: "height 0.2s";
+    -moz-transition-duration: "height 0.2s";
+    -o-transition-duration: "height 0.2s";
+    transition-duration: "height 0.2s"
+}
+
+.limiterBox {
+    border: 1px solid #222;
+    border-top: 0;
+    background-color: #333;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: #FFF;
+    margin-top: 6px
+}
+
+.limiterBox:after {
+    display: none
+}
+
+.limiterBox:before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -8px;
+    left: 50%;
+    margin-left: -5px;
+    border-color: transparent;
+    border-style: solid;
+    border-bottom-color: #333;
+    border-width: 0 8px 8px
+}
+
+select {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border-width: 1px
+}
+
+select:focus {
+    outline: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: #f59942
+}
+
+select option {
+    padding: 3px 4px
+}
+
+select option:active, select option:hover, select option:focus {
+    background-color: #e5e9ee;
+    color: #111
+}
+
+select option[value=""] {
+    padding: 0
+}
+
+input[disabled] {
+    color: #848484;
+    background-color: #eee
+}
+
+input[disabled]:hover {
+    border-color: #c3c3c3
+}
+
+input[readonly] {
+    color: #939192;
+    background: #f5f5f5 !important;
+    cursor: default
+}
+
+input[readonly]:hover {
+    border-color: #c3c3c3
+}
+
+input[readonly]:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: #aaa;
+    background-color: #f9f9f9
+}
+
+input[type=checkbox], input[type=radio] {
+    opacity: 0;
+    position: absolute;
+    z-index: 12;
+    width: 18px;
+    height: 18px
+}
+
+input[type=checkbox]:checked, input[type=radio]:checked, input[type=checkbox]:focus, input[type=radio]:focus {
+    outline: none !important
+}
+
+input[type=checkbox]+.lbl, input[type=radio]+.lbl {
+    position: relative;
+    z-index: 11;
+    display: inline-block;
+    margin: 0;
+    line-height: 20px;
+    min-height: 14px;
+    min-width: 14px;
+    font-weight: normal
+}
+
+input[type=checkbox]+.lbl.padding-16::before, input[type=radio]+.lbl.padding-16::before {
+    margin-right: 16px
+}
+
+input[type=checkbox]+.lbl.padding-12::before, input[type=radio]+.lbl.padding-12::before {
+    margin-right: 12px
+}
+
+input[type=checkbox]+.lbl.padding-8::before, input[type=radio]+.lbl.padding-8::before {
+    margin-right: 8px
+}
+
+input[type=checkbox]+.lbl.padding-4::before, input[type=radio]+.lbl.padding-4::before {
+    margin-right: 4px
+}
+
+input[type=checkbox]+.lbl.padding-0::before, input[type=radio]+.lbl.padding-0::before {
+    margin-right: 0
+}
+
+input[type=checkbox]+.lbl::before, input[type=radio]+.lbl::before {
+    font-family: fontAwesome;
+    font-weight: normal;
+    font-size: 11px;
+    color: #32a3ce;
+    content: "\a0";
+    background-color: #fafafa;
+    border: 1px solid #CCC;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    height: 13px;
+    line-height: 13px;
+    min-width: 13px;
+    margin-right: 1px
+}
+
+input[type=checkbox]:checked+.lbl::before, input[type=radio]:checked+.lbl::before {
+    display: inline-block;
+    content: '\f00c';
+    background-color: #f5f8fc;
+    border-color: #adb8c0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1)
+}
+
+input[type=checkbox]:hover+.lbl::before, input[type=radio]:hover+.lbl::before, input[type=checkbox]+.lbl:hover::before, input[type=radio]+.lbl:hover::before {
+    border-color: #ff893c
+}
+
+input[type=checkbox]:active+.lbl::before, input[type=radio]:active+.lbl::before, input[type=checkbox]:checked:active+.lbl::before, input[type=radio]:checked:active+.lbl::before {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(0, 0, 0, 0.1)
+}
+
+input[type=checkbox].ace-checkbox-2+.lbl::before, input[type=radio].ace-checkbox-2+.lbl::before {
+    box-shadow: none
+}
+
+input[type=checkbox].ace-checkbox-2:checked+.lbl::before, input[type=radio].ace-checkbox-2:checked+.lbl::before {
+    background-color: #f9a021;
+    border-color: #f9a021;
+    color: #FFF
+}
+
+input[type=checkbox]:disabled+.lbl::before, input[type=radio]:disabled+.lbl::before, input[type=checkbox][disabled]+.lbl::before, input[type=radio][disabled]+.lbl::before, input[type=checkbox].disabled+.lbl::before, input[type=radio].disabled+.lbl::before {
+    background-color: #DDD !important;
+    border-color: #CCC !important;
+    box-shadow: none !important;
+    color: #BBB
+}
+
+input[type=radio]+.lbl::before {
+    border-radius: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px
+}
+
+input[type=radio]:checked+.lbl::before {
+    content: "\2022"
+}
+
+input[type=checkbox].ace-switch {
+    width: 55px;
+    height: 20px
+}
+
+input[type=checkbox].ace-switch+.lbl {
+    margin: 0 4px;
+    min-height: 24px
+}
+
+input[type=checkbox].ace-switch+.lbl::before {
+    font-family: Arial, Helvetica, sans-serif;
+    content: "ON\a0\a0\a0\a0\a0\a0\a0\a0\a0OFF";
+    color: #999;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 18px;
+    line-height: 21 px\9;
+    height: 18px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #CCC;
+    text-align: left;
+    float: left;
+    padding: 0;
+    width: 50px;
+    text-indent: -19px;
+    text-indent: -21 px\9;
+    margin-right: 0;
+    -webkit-transition: text-indent .4s ease;
+    -moz-transition: text-indent .4s ease;
+    -o-transition: text-indent .4s ease;
+    transition: text-indent .4s ease
+}
+
+input[type=checkbox].ace-switch+.lbl::after {
+    font-family: Arial, Helvetica, sans-serif;
+    content: '|||';
+    font-size: 10px;
+    font-weight: lighter;
+    color: #e5e5e5;
+    background-color: #FFF;
+    text-shadow: -1px 0 0 rgba(0, 0, 0, 0.15);
+    text-align: center;
+    border-radius: 12px;
+    width: 22px;
+    height: 22px;
+    line-height: 20px;
+    position: absolute;
+    top: -2px;
+    left: -3px;
+    padding: 0;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) inset;
+    -webkit-transition: left .4s ease;
+    -moz-transition: left .4s ease;
+    -o-transition: left .4s ease;
+    transition: left .4s ease
+}
+
+input[type=checkbox].ace-switch:checked+.lbl::before {
+    text-indent: 9px;
+    color: #FFF;
+    background-color: #8ab2c9;
+    border-color: #468fcc
+}
+
+input[type=checkbox].ace-switch:checked+.lbl::after {
+    left: 34px;
+    background-color: #FFF;
+    color: #8ab2c9
+}
+
+input[type=checkbox].ace-switch.ace-switch-2+.lbl::before {
+    content: "YES\a0\a0\a0\a0\a0\a0\a0\a0NO"
+}
+
+input[type=checkbox].ace-switch.ace-switch-3+.lbl::after {
+    font-family: FontAwesome;
+    font-size: 13px;
+    line-height: 23px;
+    content: "\f00d";
+    top: -1px
+}
+
+input[type=checkbox].ace-switch.ace-switch-3:checked+.lbl::after {
+    content: "\f00c"
+}
+
+input[type=checkbox].ace-switch.ace-switch-4+.lbl::before, input[type=checkbox].ace-switch.ace-switch-5+.lbl::before {
+    content: "ON\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0OFF";
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 12px;
+    line-height: 19px;
+    height: 20px;
+    overflow: hidden;
+    line-height: 21 px\9;
+    border-radius: 12px;
+    background-color: #8b9aa3;
+    border: 1px solid #8b9aa3;
+    color: #FFF;
+    width: 52px;
+    text-indent: -25px;
+    text-indent: -28 px\9;
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+    box-shadow: none;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease
+}
+
+input[type=checkbox].ace-switch.ace-switch-4+.lbl::after, input[type=checkbox].ace-switch.ace-switch-5+.lbl::after {
+    font-family: Arial, Helvetica, sans-serif;
+    content: '|||';
+    text-shadow: -1px 0 0 rgba(0, 0, 0, 0.2);
+    font-size: 7px;
+    font-weight: lighter;
+    color: #8b9aa3;
+    text-align: center;
+    position: absolute;
+    border-radius: 12px;
+    color: #5b6a73;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    line-height: 16px;
+    background-color: #FFF;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease
+}
+
+input[type=checkbox].ace-switch.ace-switch-4:checked+.lbl::before, input[type=checkbox].ace-switch.ace-switch-5:checked+.lbl::before {
+    text-indent: 9px;
+    background-color: #468fcc;
+    border-color: #468fcc
+}
+
+input[type=checkbox].ace-switch.ace-switch-4:checked+.lbl::after, input[type=checkbox].ace-switch.ace-switch-5:checked+.lbl::after {
+    left: 34px;
+    background-color: #FFF
+}
+
+input[type=checkbox].ace-switch.ace-switch-5+.lbl::before {
+    content: "YES\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0NO"
+}
+
+input[type=checkbox].ace-switch.ace-switch-5:checked+.lbl::before {
+    text-indent: 8px
+}
+
+input[type=checkbox].ace-switch.ace-switch-6+.lbl {
+    position: relative
+}
+
+input[type=checkbox].ace-switch.ace-switch-6+.lbl::before {
+    font-family: FontAwesome;
+    content: "\f00d";
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: none;
+    border: 0;
+    font-weight: lighter;
+    font-size: 16px;
+    border-radius: 12px;
+    display: inline-block;
+    background-color: #888;
+    color: #f2f2f2;
+    width: 52px;
+    height: 22px;
+    line-height: 20px;
+    text-indent: 32px;
+    -webkit-transition: background .1s ease;
+    -moz-transition: background .1s ease;
+    -o-transition: background .1s ease;
+    transition: background .1s ease
+}
+
+input[type=checkbox].ace-switch.ace-switch-6+.lbl::after {
+    content: '';
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    border-radius: 12px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    background-color: #f2f2f2;
+    border: 4px solid #f2f2f2;
+    -webkit-transition: left .2s ease;
+    -moz-transition: left .2s ease;
+    -o-transition: left .2s ease;
+    transition: left .2s ease
+}
+
+input[type=checkbox].ace-switch.ace-switch-6:checked+.lbl::before {
+    content: "\f00c";
+    text-indent: 6px;
+    color: #FFF;
+    border-color: #b7d3e5;
+    background-color: #ff893c
+}
+
+input[type=checkbox].ace-switch.ace-switch-6:checked+.lbl::after {
+    left: 32px;
+    background-color: #FFF;
+    border: 4px solid #FFF;
+    text-shadow: 0 -1px 0 rgba(0, 200, 0, 0.25)
+}
+
+input[type=checkbox].ace-switch.ace-switch-7 {
+    width: 75px
+}
+
+input[type=checkbox].ace-switch.ace-switch-7+.lbl {
+    position: relative
+}
+
+input[type=checkbox].ace-switch.ace-switch-7+.lbl::before {
+    content: "OFF\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0ON";
+    font-weight: bolder;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: #FFF;
+    border: 2px solid #AAA;
+    border-radius: 0;
+    box-shadow: none;
+    color: #aaa;
+    width: 70px;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    text-indent: 4px;
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease
+}
+
+input[type=checkbox].ace-switch.ace-switch-7+.lbl::after {
+    content: '\f00d';
+    font-family: FontAwesome;
+    font-size: 16px;
+    position: absolute;
+    top: 3px;
+    left: 39px;
+    width: 32px;
+    height: 20px;
+    line-height: 18px;
+    text-align: center;
+    background-color: #aaa;
+    color: #FFF;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out
+}
+
+input[type=checkbox].ace-switch.ace-switch-7:checked+.lbl::before {
+    color: #468fcc;
+    background-color: #FFF;
+    text-indent: -33px;
+    border-color: #6fb3e0
+}
+
+input[type=checkbox].ace-switch.ace-switch-7:checked+.lbl::after {
+    left: 3px;
+    content: '\f00c';
+    background-color: #468fcc;
+    color: #FFF
+}
+
+.input-prepend .add-on, .input-append .add-on {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important
+}
+
+.control-group.success .input-prepend .add-on, .control-group.success .input-append .add-on {
+    border-color: #92bf65
+}
+
+.control-group.error .input-prepend .add-on, .control-group.error .input-append .add-on {
+    border-color: #f09784
+}
+
+.control-group.warning .input-prepend .add-on, .control-group.warning .input-append .add-on {
+    border-color: #e0c43a
+}
+
+.control-group.info .input-prepend .add-on, .control-group.info .input-append .add-on {
+    border-color: #64a6bc
+}
+
+.input-prepend>.bouton, .input-append>.bouton {
+    line-height: 20px;
+    padding: 0 6px;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important
+}
+
+.input-prepend>.bouton.bouton-small, .input-append>.bouton.bouton-small {
+    line-height: 22px
+}
+
+.input-prepend>.bouton+.bouton, .input-append>.bouton+.bouton {
+    margin-left: 1px
+}
+
+.input-prepend>.bouton-group>.bouton, .input-append>.bouton-group>.bouton {
+    line-height: 23px
+}
+
+.input-prepend>.bouton-group>.bouton.bouton-small, .input-append>.bouton-group>.bouton.bouton-small {
+    line-height: 26px
+}
+
+.input-prepend>.bouton>.caret, .input-append>.bouton>.caret, .input-prepend>.bouton-group>.bouton>.caret, .input-append>.bouton-group>.bouton>.caret, .input-prepend>.bouton.bouton-small>.caret, .input-append>.bouton.bouton-small>.caret, .input-prepend>.bouton-group>.bouton.bouton-small>.caret, .input-append>.bouton-group>.bouton.bouton-small>.caret {
+    margin-top: 10px
+}

@@ -1,0 +1,51 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:file='urn:import:org.vectomatic.file'
+             xmlns:dnd='urn:import:org.vectomatic.dnd'
+             xmlns:b='urn:import:com.github.gwtbootstrap.client.ui'>
+
+    <ui:style>
+        .dropWrapper {
+            border: #DDD 4px dashed;
+            border-radius: 2px;
+        }
+
+        .dropZone {
+            font-size: 20pt;
+            color: #CCC;
+            padding: 50px 10px;
+            text-align: center;
+        }
+
+        .smallTitle {
+            font-size: 15px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            text-align: center;
+            color: #CCC;
+        }
+
+        .hidden {
+            display: none;
+            visibility: hidden;
+            width: 0;
+        }
+
+        .uploadingWrapper {
+            padding: 10px;
+        }
+    </ui:style>
+
+    <g:HTMLPanel ui:field="dropWrapper" styleName="{style.dropWrapper}">
+        <dnd:DropPanel ui:field="dropZone" styleName="{style.dropZone}">
+            <g:Label ui:field="messageLabel" text="Déposer le fichier ici..."/>
+        </dnd:DropPanel>
+
+        <g:HTMLPanel ui:field="uploadingContainer" styleName="{style.uploadingWrapper}" visible="false">
+            <g:Label styleName="{style.smallTitle}" text="Chargement..."/>
+            <b:ProgressBar ui:field="progressBar"/>
+        </g:HTMLPanel>
+
+        <file:FileUploadExt ui:field="fileUpload" styleName="{style.hidden}"/>
+    </g:HTMLPanel>
+</ui:UiBinder>

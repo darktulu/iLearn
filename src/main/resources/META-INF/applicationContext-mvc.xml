@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+    <!-- property place holder for external properties -->
+    <context:property-placeholder location="classpath*:/META-INF/settings.properties"/>
+
+    <!-- Turns on support for mapping requests to Spring MVC @Controller methods -->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+                <property name="objectMapper" ref="customObjectMapper"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!-- Allows for mapping the DispatcherServlet to "/" by forwarding static resource requests to the container's default Servlet -->
+    <mvc:default-servlet-handler/>
+
+    <!-- The controllers are autodetected POJOs labeled with the @Controller annotation. -->
+    <context:component-scan base-package="com.simu.ilearn.server.controller" use-default-filters="false">
+        <context:include-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+    </context:component-scan>
+
+    <!-- Configures view for returning JSON to the client -->
+    <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+        <property name="contentType" value="application/json"/>
+    </bean>
+
+    <!-- Custom object mapper to fix Date serialization -->
+    <bean id="customObjectMapper" class="com.simu.ilearn.server.util.CustomObjectMapper"/>
+
+    <!-- File upload resolver -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="268435456"/>
+    </bean>
+</beans>

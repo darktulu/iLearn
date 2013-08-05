@@ -1,0 +1,71 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:b='urn:import:com.github.gwtbootstrap.client.ui'
+             xmlns:cell='urn:import:com.google.gwt.user.cellview.client'>
+    <ui:with field="resource" type="com.simu.ilearn.common.client.resource.SharedResources"/>
+
+    <ui:style>
+        .container {
+            margin: 20px;
+            border: solid 1px #ccc;
+            background-color: white;
+        }
+
+        .wrapper {
+            padding: 0 20px;
+        }
+
+        .overflow {
+            background-color: #f5f5f5;
+            overflow-y: auto;
+            height: 90%;
+        }
+
+        .smallTable {
+            font-size: 11px;
+            margin: 20px 10px;
+        }
+    </ui:style>
+
+    <g:HTMLPanel>
+        <div class="{resource.sharedStyleCss.viewHeaderBlue}">
+            <g:Label ui:field="employee" styleName="{resource.sharedStyleCss.viewTitleBlue}"
+                     text="Paramètres compte IJ-Ebus"/>
+
+            <div class="{resource.sharedStyleCss.actionBar}">
+                <b:Button ui:field="goBack" text="Retour" icon="FAST_BACKWARD"
+                          styleName="bouton bouton-small"/>
+                <b:Button ui:field="download" text="Download" icon="CLOUD_DOWNLOAD"
+                          styleName="bouton bouton-small bouton-primary"/>
+            </div>
+
+            <div style="clear: both;"/>
+        </div>
+
+        <div class="{style.overflow}">
+            <div class="{style.container}">
+                <div class="{style.wrapper}">
+                    <div class="{resource.sharedStyleCss.tableHeaderBlue}">
+                        <g:Label ui:field="attestationTitle"/>
+                    </div>
+                    <g:HTMLPanel ui:field="attestationPanel"/>
+                    <g:HTMLPanel ui:field="emetteurPanel"/>
+                    <g:HTMLPanel ui:field="interlocuteurPanel"/>
+                    <g:HTMLPanel ui:field="recepteurPanel"/>
+                    <g:HTMLPanel ui:field="salariePanel"/>
+                    <g:HTMLPanel ui:field="arretPanel"/>
+                    <g:HTMLPanel ui:field="emploiPanel"/>
+                    <g:HTMLPanel ui:field="ettablissementPanel"/>
+                    <g:HTMLPanel ui:field="justificatifPanel"/>
+                </div>
+                <div class="{style.smallTable}">
+                    <div class="{resource.sharedStyleCss.tableHeaderBlue}">
+                        <g:Label ui:field="tableTitle" text="Elements de revenus"/>
+                    </div>
+                    <cell:CellTable ui:field="elementDeRevenuTable"/>
+                </div>
+            </div>
+        </div>
+
+    </g:HTMLPanel>
+</ui:UiBinder>

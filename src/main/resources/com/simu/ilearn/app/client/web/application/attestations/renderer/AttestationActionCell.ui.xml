@@ -1,0 +1,15 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
+
+    <div>
+        <a href="javascript:;" class="bouton bouton-mini" ui:field="details">
+            <i class="icon-search"/>
+            consulter
+        </a>
+
+        <a href="javascript:;" class="bouton bouton-pink bouton-mini" ui:field="download">
+            <i class="icon-cloud-download"/>
+            Telecharger
+        </a>
+    </div>
+
+</ui:UiBinder>

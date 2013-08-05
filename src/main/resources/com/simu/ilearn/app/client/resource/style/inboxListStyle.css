@@ -1,0 +1,23 @@
+.cellListWidget {
+}
+
+.cellListEvenItem {
+    background: transparent;
+}
+
+.cellListOddItem {
+    background: transparent;
+}
+
+.cellListKeyboardSelectedItem {
+    background: transparent;
+}
+
+.cellListSelectedItem {
+    background-image: none;
+    background-color: #ddd;
+    color: #000;
+    -webkit-box-shadow: inset 0px 1px 3px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0px 1px 3px 1px rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.3);
+}

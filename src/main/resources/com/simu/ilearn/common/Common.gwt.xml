@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module rename-to='common'>
+    <!-- Inherit the schema Web Toolkit stuff.                        -->
+    <inherits name='com.google.gwt.user.User'/>
+
+    <!-- Other module inherits                                      -->
+    <inherits name="com.google.common.base.Base"/>
+    <inherits name="com.google.gwt.query.Query"/>
+    <inherits name="com.github.gwtbootstrap.datepicker.Datepicker"/>
+    <inherits name="com.github.gwtbootstrap.Bootstrap"/>
+    <inherits name="com.gwtplatform.mvp.Mvp"/>
+    <inherits name="org.vectomatic.libgwtfile"/>
+    <inherits name="com.google.gwt.xhr2.XMLHttpRequest2"/>
+
+    <source path='client'/>
+    <source path='shared'/>
+</module>

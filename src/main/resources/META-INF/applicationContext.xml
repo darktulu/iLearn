@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+            http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.2.xsd
+            http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd">
+    <!-- property place holder for external properties -->
+    <context:property-placeholder location="classpath*:/META-INF/*.properties"/>
+
+    <!-- Bean annotated scan -->
+    <context:component-scan base-package="com.simu.ilearn.server.*"/>
+
+    <!-- Bean validator -->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
+    <bean class="org.springframework.validation.beanvalidation.MethodValidationPostProcessor"/>
+
+    <!-- Activates @Scheduled and @Async annotations for scheduling -->
+    <task:annotation-driven/>
+    <task:executor id="executorWithPoolSizeRange" pool-size="5-25" queue-capacity="100"/>
+
+    <!-- Loading message properties from class path -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>com.simu.ilearn.common.i18n.ImportMessages</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- MongoDB datasource configuration -->
+    <mongo:mongo host="localhost" port="27017"/>
+
+    <mongo:db-factory id="mongoDbFactory" dbname="ijonline-db"/>
+    <mongo:mapping-converter id="converter"/>
+
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+    </bean>
+
+    <mongo:repositories base-package="com.simu.ilearn.server.migration.log"
+                        repository-impl-postfix="Impl" mongo-template-ref="mongoTemplate"/>
+
+    <bean class="org.springframework.data.mongodb.gridfs.GridFsTemplate">
+        <constructor-arg ref="mongoDbFactory"/>
+        <constructor-arg ref="converter"/>
+    </bean>
+
+    <!-- ModelMapper mapping provider -->
+    <bean class="com.simu.ilearn.server.util.MyModelMapper" id="mapper"/>
+
+    <!-- Spring Integration Default Poller, check every 200 seconds -->
+    <int:poller id="poller" default="true" time-unit="SECONDS" fixed-delay="600"/>
+</beans>

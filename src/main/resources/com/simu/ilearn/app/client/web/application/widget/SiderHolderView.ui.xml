@@ -1,0 +1,19 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:b='urn:import:com.github.gwtbootstrap.client.ui'>
+
+    <ui:with field="resources" type="com.simu.ilearn.common.client.resource.SharedResources"/>
+    <ui:with field="nameTokens" type="com.simu.ilearn.app.client.place.NameTokens"/>
+
+    <g:HTMLPanel styleName="{resources.navListStyleCss.blueNavList}">
+        <b:NavList>
+            <b:NavWidget ui:field="imports" icon="DOWNLOAD_ALT" text="Importations">
+                <b:Badge text="5"/>
+            </b:NavWidget>
+            <b:NavWidget ui:field="declarations" icon="LIST_ALT" text="Déclarations">
+                <b:Badge text="10"/>
+            </b:NavWidget>
+            <b:NavLink ui:field="attestations" icon="COGS" text="Attestations" />
+        </b:NavList>
+    </g:HTMLPanel>
+</ui:UiBinder>
