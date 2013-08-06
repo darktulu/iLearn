@@ -22,8 +22,6 @@ public class LearnWidgetView extends ViewWithUiHandlers<LearnWidgetUiHandlers> i
     Label summary;
     @UiField
     Label created;
-    @UiField
-    Label views;
 
     @Inject
     public LearnWidgetView(final Binder uiBinder) {
