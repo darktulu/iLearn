@@ -85,6 +85,7 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
             @Override
             public void onReceive(ValidatedResponse response) {
                 loadEntities();
+                getView().editLearn(new LearnVO());
 
                 Message message = new Message.Builder(messageBundle.myEntitySaveSucess())
                         .style(AlertType.SUCCESS).build();
