@@ -35,4 +35,10 @@ public class AuthenticationController extends BaseController {
     public GetResult<UserVO> currentUser() {
         return new GetResult<UserVO>(authenticationService.currentUser());
     }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    @ResponseBody
+    public GetResult<Boolean> logout() {
+        return new GetResult<Boolean>(authenticationService.logout());
+    }
 }

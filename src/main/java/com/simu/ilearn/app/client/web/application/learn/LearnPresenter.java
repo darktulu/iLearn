@@ -24,6 +24,7 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
+import com.gwtplatform.mvp.client.annotations.UseGatekeeper;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.simu.ilearn.app.client.place.NameTokens;
 import com.simu.ilearn.app.client.resource.message.MessageBundle;
@@ -31,6 +32,7 @@ import com.simu.ilearn.app.client.rest.LearnService;
 import com.simu.ilearn.app.client.web.application.ApplicationPresenter;
 import com.simu.ilearn.app.client.web.application.learn.widget.LearnWidgetFactory;
 import com.simu.ilearn.common.client.rest.AsyncCallbackImpl;
+import com.simu.ilearn.common.client.security.LoggedInGatekeeper;
 import com.simu.ilearn.common.client.widget.messages.Message;
 import com.simu.ilearn.common.client.widget.messages.event.MessageEvent;
 import com.simu.ilearn.common.shared.dispatch.GetResults;
@@ -49,8 +51,8 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
     }
 
     @ProxyStandard
-
-    @NameToken(NameTokens.learn)
+    @NameToken(NameTokens.home)
+    @UseGatekeeper(LoggedInGatekeeper.class)
     public interface MyProxy extends ProxyPlace<LearnPresenter> {
     }
 
