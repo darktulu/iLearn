@@ -1,6 +1,7 @@
 package com.simu.ilearn.server.business;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -17,7 +18,7 @@ public class Learn {
     private Date created;
     @ManyToOne
     private User owner;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Tag> tags;
 
     public Long getId() {
