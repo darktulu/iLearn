@@ -46,7 +46,7 @@
         <guava.version>13.0.1</guava.version>
         <xalan.version>2.7.1</xalan.version>
         <json.version>20090211</json.version>
-        <activiti.version>5.12.1</activiti.version>
+        <activiti.version>5.13</activiti.version>
         <jasper.version>4.0.2</jasper.version>
         <jackson-mapper-asl.version>1.9.9</jackson-mapper-asl.version>
         <jaxb-api.version>2.2.7</jaxb-api.version>

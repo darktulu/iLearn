@@ -16,12 +16,7 @@
 
 package com.simu.ilearn.app.client.web.application.widget;
 
-import com.github.gwtbootstrap.client.ui.NavLink;
-import com.github.gwtbootstrap.client.ui.NavWidget;
-import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
@@ -30,44 +25,8 @@ public class SiderHolderView extends ViewImpl implements SiderHolderPresenter.My
     public interface Binder extends UiBinder<Widget, SiderHolderView> {
     }
 
-    @UiField
-    NavWidget imports;
-    @UiField
-    NavWidget declarations;
-    @UiField
-    NavLink attestations;
-
     @Inject
     public SiderHolderView(final Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
-    }
-
-    @Override
-    public void setSelectedMenu(String currentToken) {
-        clearActive();
-    }
-
-    @UiHandler("imports")
-    void onImportsClicked(ClickEvent event) {
-        clearActive();
-        imports.setActive(true);
-    }
-
-    @UiHandler("declarations")
-    void onDeclarationClicked(ClickEvent event) {
-        clearActive();
-        declarations.setActive(true);
-    }
-
-    @UiHandler("attestations")
-    void onSettingsClicked(ClickEvent event) {
-        clearActive();
-        attestations.setActive(true);
-    }
-
-    private void clearActive() {
-        imports.setActive(false);
-        attestations.setActive(false);
-        declarations.setActive(false);
     }
 }

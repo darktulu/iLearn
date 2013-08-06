@@ -14,21 +14,11 @@
  * the License.
  */
 
-package com.simu.ilearn.app.client.web.application.widget;
+package com.simu.ilearn.app.client.web.application.learn;
 
-import com.google.web.bindery.event.shared.EventBus;
-import com.gwtplatform.mvp.client.PresenterWidget;
-import com.gwtplatform.mvp.client.View;
+import com.gwtplatform.mvp.client.UiHandlers;
+import com.simu.ilearn.common.shared.vo.LearnVO;
 
-import javax.inject.Inject;
-
-public class SiderHolderPresenter extends PresenterWidget<SiderHolderPresenter.MyView> {
-    public interface MyView extends View {
-    }
-
-    @Inject
-    SiderHolderPresenter(EventBus eventBus,
-                         MyView view) {
-        super(eventBus, view);
-    }
+public interface LearnDetailUiHandlers extends UiHandlers {
+    void goBackHome();
 }
