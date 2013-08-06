@@ -16,7 +16,7 @@
 
 package com.simu.ilearn.server.security;
 
-import com.simu.ilearn.server.repos.UserRepos;
+import com.simu.ilearn.server.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -32,7 +32,7 @@ import java.util.List;
 @Component("userDetailsService")
 public class StatelessUserDetailService implements UserDetailsService {
     @Autowired
-    private UserRepos userRepos;
+    private UserRepo userRepos;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

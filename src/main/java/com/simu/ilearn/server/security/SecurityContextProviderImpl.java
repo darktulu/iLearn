@@ -17,7 +17,7 @@
 package com.simu.ilearn.server.security;
 
 import com.simu.ilearn.common.shared.vo.UserVO;
-import com.simu.ilearn.server.repos.UserRepos;
+import com.simu.ilearn.server.repos.UserRepo;
 import com.simu.ilearn.server.util.MyModelMapper;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -29,7 +29,7 @@ import javax.inject.Inject;
 @Component
 public class SecurityContextProviderImpl implements SecurityContextProvider {
     @Inject
-    private UserRepos userRepos;
+    private UserRepo userRepos;
     @Inject
     private MyModelMapper mapper;
 

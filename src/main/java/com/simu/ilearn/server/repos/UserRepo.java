@@ -19,7 +19,7 @@ package com.simu.ilearn.server.repos;
 import com.simu.ilearn.server.business.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepos extends JpaRepository<User, Long> {
+public interface UserRepo extends JpaRepository<User, Long> {
     User findByEmail(String email);
 
     User findByUsername(String username);
