@@ -14,27 +14,10 @@
  * the License.
  */
 
-package com.simu.ilearn.app.client.place;
+package com.simu.ilearn.server.repos;
 
-public class NameTokens {
-    public static final String login = "!login";
-    public static final String register = "!register";
-    public static final String home = "!home";
-    public static final String learn = "!learn";
+import com.simu.ilearn.server.business.Learn;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    public static String getLogin() {
-        return login;
-    }
-
-    public static String getRegister() {
-        return register;
-    }
-
-    public static String getHome() {
-        return home;
-    }
-
-    public static String getLearn() {
-        return learn;
-    }
+public interface LearnRepo extends JpaRepository<Learn, Long> {
 }

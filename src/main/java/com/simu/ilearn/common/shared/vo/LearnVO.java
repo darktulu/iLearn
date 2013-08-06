@@ -1,25 +1,16 @@
-package com.simu.ilearn.server.business;
+package com.simu.ilearn.common.shared.vo;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import java.util.Date;
 import java.util.List;
 
-@Entity
-public class Learn {
-    @Id
+public class LearnVO {
     private Long id;
     private String title;
     private String content;
     private Double note;
     private Date created;
-    @ManyToOne
-    private User owner;
-    @ManyToMany(fetch = FetchType.EAGER)
-    private List<Tag> tags;
+    private UserVO owner;
+    private List<TagVO> tags;
 
     public Long getId() {
         return id;
@@ -61,19 +52,19 @@ public class Learn {
         this.created = created;
     }
 
-    public User getOwner() {
+    public UserVO getOwner() {
         return owner;
     }
 
-    public void setOwner(User owner) {
+    public void setOwner(UserVO owner) {
         this.owner = owner;
     }
 
-    public List<Tag> getTags() {
+    public List<TagVO> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<TagVO> tags) {
         this.tags = tags;
     }
 }
