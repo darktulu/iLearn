@@ -18,6 +18,7 @@ package com.simu.ilearn.app.client.web.application;
 
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.simu.ilearn.app.client.web.application.home.HomeModule;
+import com.simu.ilearn.app.client.web.application.learn.LearnModule;
 import com.simu.ilearn.app.client.web.application.widget.HeaderPresenter;
 import com.simu.ilearn.app.client.web.application.widget.HeaderUiHandlers;
 import com.simu.ilearn.app.client.web.application.widget.HeaderView;
@@ -28,6 +29,7 @@ public class ApplicationModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
         install(new HomeModule());
+        install(new LearnModule());
 
         bind(HeaderUiHandlers.class).to(HeaderPresenter.class);
 

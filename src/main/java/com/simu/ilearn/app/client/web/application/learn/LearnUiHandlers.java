@@ -14,27 +14,11 @@
  * the License.
  */
 
-package com.simu.ilearn.app.client.place;
+package com.simu.ilearn.app.client.web.application.learn;
 
-public class NameTokens {
-    public static final String login = "!login";
-    public static final String register = "!register";
-    public static final String home = "!home";
-    public static final String learn = "!learn";
+import com.gwtplatform.mvp.client.UiHandlers;
+import com.simu.ilearn.common.shared.vo.LearnVO;
 
-    public static String getLogin() {
-        return login;
-    }
-
-    public static String getRegister() {
-        return register;
-    }
-
-    public static String getHome() {
-        return home;
-    }
-
-    public static String getLearn() {
-        return learn;
-    }
+public interface LearnUiHandlers extends UiHandlers {
+    void saveLearn(LearnVO learn);
 }

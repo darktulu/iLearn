@@ -14,27 +14,21 @@
  * the License.
  */
 
-package com.simu.ilearn.app.client.place;
+package com.simu.ilearn.server.service;
 
-public class NameTokens {
-    public static final String login = "!login";
-    public static final String register = "!register";
-    public static final String home = "!home";
-    public static final String learn = "!learn";
+import com.simu.ilearn.common.shared.vo.LearnVO;
+import org.springframework.validation.annotation.Validated;
 
-    public static String getLogin() {
-        return login;
-    }
+import javax.validation.Valid;
+import java.util.List;
 
-    public static String getRegister() {
-        return register;
-    }
+@Validated
+public interface LearnService {
+    Long create(LearnVO learn);
 
-    public static String getHome() {
-        return home;
-    }
+    void delete(Long id);
 
-    public static String getLearn() {
-        return learn;
-    }
+    List<LearnVO> loadAll();
+
+    void show(@Valid LearnVO learn);
 }
