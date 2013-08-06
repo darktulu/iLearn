@@ -27,8 +27,10 @@ public class LearnModule extends AbstractPresenterModule {
     protected void configure() {
         bind(LearnUiHandlers.class).to(LearnPresenter.class);
 
-        bindPresenter(LearnPresenter.class, LearnPresenter.MyView.class, LearnView.class,
-                LearnPresenter.MyProxy.class);
+        bindPresenter(LearnPresenter.class, LearnPresenter.MyView.class, LearnView.class, LearnPresenter.MyProxy.class);
+        bindPresenter(LearnDetailPresenter.class, LearnDetailPresenter.MyView.class,
+                LearnDetailView.class, LearnDetailPresenter.MyProxy.class);
+
         bindSharedView(LearnWidgetPresenter.MyView.class, LearnWidgetView.class);
 
         install(new GinFactoryModuleBuilder().build(LearnWidgetFactory.class));

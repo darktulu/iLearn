@@ -31,4 +31,6 @@ public interface LearnService {
     List<LearnVO> loadAll();
 
     void show(@Valid LearnVO learn);
+
+    LearnVO loadOne(Long id);
 }

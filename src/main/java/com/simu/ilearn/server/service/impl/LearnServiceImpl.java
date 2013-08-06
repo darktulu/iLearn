@@ -63,4 +63,10 @@ public class LearnServiceImpl implements LearnService {
         }
         return result;
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public LearnVO loadOne(Long id) {
+        return mapper.map(learnRepo.findOne(id), LearnVO.class);
+    }
 }

@@ -55,7 +55,8 @@ public class RegisterPresenter extends Presenter<RegisterPresenter.MyView, Regis
             @Override
             public void onReceive(GetResult<Long> response) {
                 getView().clearErrors();
-                placeManager.revealPlace(new PlaceRequest(NameTokens.getLogin()));
+                PlaceRequest place = new PlaceRequest.Builder().nameToken(NameTokens.getLogin()).build();
+                placeManager.revealPlace(place);
             }
         });
     }

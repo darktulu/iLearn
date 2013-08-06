@@ -1,0 +1,30 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <ui:style>
+        .resetInput {
+            width: 490px;
+            margin-bottom: 0 !important;
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
+            -webkit-transition: border linear .2s, box-shadow linear .2s, width linear .2s;
+            -moz-transition: border linear .2s, box-shadow linear .2s, width linear .2s;
+            -o-transition: border linear .2s, box-shadow linear .2s, width linear .2s;
+            background-color: #ffffff;
+            border: solid white 1px !important;
+        }
+
+        .learn {
+            width: 500px;
+            padding: 5px;
+            background-color: #ccc;
+        }
+    </ui:style>
+    <g:HTMLPanel>
+        <g:Button ui:field="goBack" text="back" />
+        <g:HTMLPanel addStyleNames="{style.learn}" ui:field="panel">
+            <g:TextBox ui:field="title" styleName="{style.resetInput}"/>
+            <g:TextArea ui:field="content" styleName="{style.resetInput}"/>
+        </g:HTMLPanel>
+    </g:HTMLPanel>
+</ui:UiBinder>
