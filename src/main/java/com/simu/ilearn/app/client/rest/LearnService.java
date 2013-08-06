@@ -27,4 +27,8 @@ public interface LearnService extends RestService {
 
     @GET
     Action<GetResults<LearnVO>> loadAll();
+
+    @GET
+    @Path(PathParameter.ID)
+    Action<GetResult<LearnVO>> loadOne(@PathParam(RestParameter.ID) Long id);
 }

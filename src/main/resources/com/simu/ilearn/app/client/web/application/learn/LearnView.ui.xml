@@ -7,16 +7,19 @@
         }
 
         .wrapper {
+            margin: auto;
+            max-width: 900px;
             overflow-y: auto;
             overflow-x: auto;
         }
     </ui:style>
     <g:HTMLPanel addStyleNames="{style.body}">
-        I'm in articlesView
 
-        <!-- TODO : to be placed in a widget -->
-        <s:LearnEditor ui:field="learnEditor"/>
-        <g:Button ui:field="submit"/>
+        <div class="{style.wrapper}">
+            <!-- TODO : to be placed in a widget -->
+            <s:LearnEditor ui:field="learnEditor"/>
+            <g:Button ui:field="submit"/>
+        </div>
 
         <div class="{style.wrapper}">
             <g:HTMLPanel ui:field="tablePanel"/>
