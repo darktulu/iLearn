@@ -64,7 +64,7 @@ public class BootstrapperImpl implements Bootstrapper {
     private void onGetCurrentUser(UserVO currentUser) {
         if (currentUser == null) {
             logger.info("User is not authentified -- access denied...");
-            placeManager.revealCurrentPlace();
+            bounceToLogin();
         } else {
             bounceToHome();
         }
@@ -72,6 +72,11 @@ public class BootstrapperImpl implements Bootstrapper {
 
     private void bounceToHome() {
         PlaceRequest place = new PlaceRequest.Builder().nameToken(NameTokens.getHome()).build();
+        placeManager.revealPlace(place);
+    }
+
+    private void bounceToLogin() {
+        PlaceRequest place = new PlaceRequest.Builder().nameToken(NameTokens.getLogin()).build();
         placeManager.revealPlace(place);
     }
 }

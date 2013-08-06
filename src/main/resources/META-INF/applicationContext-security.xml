@@ -9,7 +9,7 @@
                             authentication-manager-ref="authenticationProvider" mode="aspectj"/>
 
     <!-- Spring Security URL Interceptor -->
-    <http create-session="stateless" entry-point-ref="digestEntryPoint"
+    <http entry-point-ref="digestEntryPoint"
           authentication-manager-ref="authenticationProvider">
         <custom-filter ref="digestFilter" after="BASIC_AUTH_FILTER" />
         <http-basic/>
@@ -29,6 +29,9 @@
         <beans:constructor-arg>
             <beans:list>
                 <beans:bean class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+                    <!--<beans:property name="passwordEncoder">-->
+                        <!--<beans:bean class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />-->
+                    <!--</beans:property>-->
                     <beans:property name="userDetailsService" ref="userDetailsService"/>
                 </beans:bean>
             </beans:list>
