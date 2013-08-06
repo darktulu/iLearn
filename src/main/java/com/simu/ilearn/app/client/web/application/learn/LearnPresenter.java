@@ -44,6 +44,8 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
         implements LearnUiHandlers {
     public interface MyView extends View, HasUiHandlers<LearnUiHandlers> {
         void setData(List<LearnVO> data);
+
+        void editLearn(LearnVO learn);
     }
 
     @ProxyStandard
@@ -93,6 +95,7 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
 
     @Override
     protected void onReveal() {
+        getView().editLearn(new LearnVO());
         loadEntities();
     }
 

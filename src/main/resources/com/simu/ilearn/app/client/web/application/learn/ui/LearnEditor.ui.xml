@@ -1,0 +1,13 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:b='urn:import:com.github.gwtbootstrap.client.ui'>
+    <g:HTMLPanel>
+        <b:ControlGroup>
+            <g:TextBox ui:field="title"/>
+        </b:ControlGroup>
+
+        <b:ControlGroup>
+            <g:TextArea ui:field="content"/>
+        </b:ControlGroup>
+    </g:HTMLPanel>
+</ui:UiBinder>

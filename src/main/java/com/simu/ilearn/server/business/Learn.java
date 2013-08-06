@@ -2,6 +2,8 @@ package com.simu.ilearn.server.business;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -11,6 +13,7 @@ import java.util.List;
 @Entity
 public class Learn {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
     private String content;
