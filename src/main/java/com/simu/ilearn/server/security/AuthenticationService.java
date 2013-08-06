@@ -22,4 +22,6 @@ public interface AuthenticationService {
     UserVO currentUser();
 
     Boolean authenticate(String username, String password);
+
+    Boolean logout();
 }

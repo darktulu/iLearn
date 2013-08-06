@@ -1,24 +1,10 @@
-/**
- * Copyright 2012 Nuvola Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
- */
-
 package com.simu.ilearn.server.security;
 
 import com.simu.ilearn.common.shared.vo.UserVO;
+import com.simu.ilearn.server.business.User;
 import com.simu.ilearn.server.repos.UserRepo;
 import com.simu.ilearn.server.util.MyModelMapper;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -29,7 +15,7 @@ import javax.inject.Inject;
 @Component
 public class SecurityContextProviderImpl implements SecurityContextProvider {
     @Inject
-    private UserRepo userRepos;
+    private UserRepo userRepo;
     @Inject
     private MyModelMapper mapper;
 
@@ -38,10 +24,27 @@ public class SecurityContextProviderImpl implements SecurityContextProvider {
     public UserVO getCurrentUser() {
         SecurityContext securityContext = SecurityContextHolder.getContext();
         if (securityContext != null) {
-            String email = securityContext.getAuthentication().getName();
-            return mapper.map(userRepos.findByEmail(email), UserVO.class);
+            User user = userRepo.findByEmail(securityContext.getAuthentication().getName());
+            if (user != null) {
+                return mapper.map(user, UserVO.class);
+            }
         }
 
         return null;
+    }
+
+    @Override
+    public Boolean logout() {
+        try {
+            SecurityContextHolder.getContext().setAuthentication(null);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
+    public void setAuthentication(Authentication authenticate) {
+        SecurityContextHolder.getContext().setAuthentication(authenticate);
     }
 }

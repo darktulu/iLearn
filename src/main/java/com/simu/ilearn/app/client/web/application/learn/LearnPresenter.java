@@ -49,6 +49,7 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
     }
 
     @ProxyStandard
+
     @NameToken(NameTokens.learn)
     public interface MyProxy extends ProxyPlace<LearnPresenter> {
     }

@@ -17,7 +17,12 @@
 package com.simu.ilearn.server.security;
 
 import com.simu.ilearn.common.shared.vo.UserVO;
+import org.springframework.security.core.Authentication;
 
 public interface SecurityContextProvider {
     UserVO getCurrentUser();
+
+    Boolean logout();
+
+    void setAuthentication(Authentication authenticate);
 }

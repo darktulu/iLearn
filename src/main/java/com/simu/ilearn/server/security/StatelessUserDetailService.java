@@ -32,11 +32,11 @@ import java.util.List;
 @Component("userDetailsService")
 public class StatelessUserDetailService implements UserDetailsService {
     @Autowired
-    private UserRepo userRepos;
+    private UserRepo userRepo;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        com.simu.ilearn.server.business.User user =  userRepos.findByEmail(email);
+        com.simu.ilearn.server.business.User user =  userRepo.findByEmail(email);
         if (user == null) {
             throw new UsernameNotFoundException("Bad credentials");
         } else {

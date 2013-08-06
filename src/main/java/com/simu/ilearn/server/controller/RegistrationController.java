@@ -4,6 +4,7 @@ import com.simu.ilearn.common.shared.dispatch.ValidatedResponse;
 import com.simu.ilearn.common.shared.rest.ResourcesPath;
 import com.simu.ilearn.common.shared.vo.UserVO;
 import com.simu.ilearn.server.service.RegistrationService;
+import com.simu.ilearn.server.util.BaseController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,7 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping(ResourcesPath.REGISTRATION)
-public class RegistrationController {
+public class RegistrationController extends BaseController {
     @Inject
     private RegistrationService registrationService;
 
