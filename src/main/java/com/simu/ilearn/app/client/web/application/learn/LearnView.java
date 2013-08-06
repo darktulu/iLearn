@@ -16,13 +16,17 @@
 
 package com.simu.ilearn.app.client.web.application.learn;
 
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
+import com.simu.ilearn.app.client.web.application.learn.ui.LearnEditor;
 import com.simu.ilearn.common.shared.vo.LearnVO;
+import com.simu.ilearn.common.shared.vo.MyEntityVO;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -31,17 +35,26 @@ public class LearnView extends ViewWithUiHandlers<LearnUiHandlers> implements Le
     public interface Binder extends UiBinder<Widget, LearnView> {
     }
 
+    @UiField(provided = true)
+    LearnEditor learnEditor;
     @UiField
     HTMLPanel tablePanel;
 
     @Inject
-    public LearnView(final Binder uiBinder) {
+    public LearnView(Binder uiBinder, LearnEditor learnEditor) {
+        this.learnEditor = learnEditor;
+
         initWidget(uiBinder.createAndBindUi(this));
     }
 
     @Override
     public void setData(List<LearnVO> data) {
 
+    }
+
+    @Override
+    public void editLearn(LearnVO learn) {
+        learnEditor.edit(learn);
     }
 
     @Override
@@ -76,5 +89,10 @@ public class LearnView extends ViewWithUiHandlers<LearnUiHandlers> implements Le
         } else {
             super.setInSlot(slot, content);
         }
+    }
+
+    @UiHandler("submit")
+    public void onSaveClicked(ClickEvent event) {
+        getUiHandlers().saveLearn(learnEditor.get());
     }
 }
