@@ -139,7 +139,7 @@
             <b:Button ui:field="searchButton" icon="SEARCH" addStyleNames="{style.searchButton}"/>
         </div>
 
-        <g:InlineHyperlink text="Déconnexion" styleName="{style.logoutLink}"/>
+        <g:InlineHyperlink text="Déconnexion" styleName="{style.logoutLink}" ui:field="logout"/>
 
         <div class="{style.userInfoBox}">
             <g:InlineLabel styleName="icon-user" addStyleNames="{style.userIcon}"/>

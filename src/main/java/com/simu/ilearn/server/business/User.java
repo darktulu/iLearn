@@ -38,6 +38,7 @@ public class User implements Serializable {
     private String lastName;
     @Enumerated(EnumType.STRING)
     private Authority authority;
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     public Long getId() {

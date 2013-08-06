@@ -50,7 +50,7 @@ public class HomePagePresenter extends Presenter<HomePagePresenter.MyView, HomeP
     }
 
     @ProxyStandard
-    @NameToken(NameTokens.home)
+    @NameToken(NameTokens.learn)
     public interface MyProxy extends ProxyPlace<HomePagePresenter> {
     }
 

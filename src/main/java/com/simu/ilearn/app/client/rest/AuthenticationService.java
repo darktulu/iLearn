@@ -18,4 +18,8 @@ public interface AuthenticationService extends RestService {
 
     @GET
     Action<GetResult<UserVO>> currentUser();
+
+    @POST
+    @Path("/logout")
+    Action<GetResult<Boolean>> logout();
 }

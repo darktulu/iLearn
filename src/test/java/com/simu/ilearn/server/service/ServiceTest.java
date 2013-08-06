@@ -1,9 +1,13 @@
 package com.simu.ilearn.server.service;
 
 import com.google.common.collect.Lists;
+import com.simu.ilearn.common.shared.type.Authority;
 import com.simu.ilearn.common.shared.vo.LearnVO;
+import com.simu.ilearn.common.shared.vo.UserVO;
 import com.simu.ilearn.server.business.Learn;
+import com.simu.ilearn.server.business.User;
 import com.simu.ilearn.server.repos.LearnRepo;
+import com.simu.ilearn.server.repos.UserRepo;
 import com.simu.ilearn.server.util.MyModelMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,16 +26,22 @@ import java.util.List;
 })
 public class ServiceTest {
     @Inject
-    private LearnRepo learnRepo;
+    private UserRepo userRepo;
     @Inject
     private MyModelMapper mapper;
 
     @Test
     public void nothing() {
-        List<LearnVO> result = Lists.newArrayList();
-        for (Learn entity : learnRepo.findAll()) {
-            result.add(mapper.map(entity, LearnVO.class));
-        }
-        System.out.println(result);
+        UserVO user = new UserVO();
+
+        user.setEmail("kecha.mohamed@gmail.com");
+        user.setUsername("kecha");
+        user.setPassword("freefree");
+
+        user.setStatus(UserVO.Status.ACTIVE);
+        user.setAuthority(Authority.ROLE_USER);
+        User u = mapper.map(user, User.class);
+        u = userRepo.save(u);
+        System.out.println(u);
     }
 }
