@@ -44,6 +44,8 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
         implements LearnUiHandlers {
     public interface MyView extends View, HasUiHandlers<LearnUiHandlers> {
         void setData(List<LearnVO> data);
+
+        void editLearn(LearnVO learn);
     }
 
     @ProxyStandard
@@ -83,6 +85,7 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
             @Override
             public void onReceive(ValidatedResponse response) {
                 loadEntities();
+                getView().editLearn(new LearnVO());
 
                 Message message = new Message.Builder(messageBundle.myEntitySaveSucess())
                         .style(AlertType.SUCCESS).build();
@@ -93,6 +96,7 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
 
     @Override
     protected void onReveal() {
+        getView().editLearn(new LearnVO());
         loadEntities();
     }
 
