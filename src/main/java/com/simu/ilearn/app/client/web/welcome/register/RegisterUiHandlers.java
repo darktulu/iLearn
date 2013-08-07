@@ -5,4 +5,6 @@ import com.simu.ilearn.common.shared.vo.UserVO;
 
 public interface RegisterUiHandlers extends UiHandlers {
     void register(UserVO user);
+
+    void bounceToLogin();
 }

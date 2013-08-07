@@ -82,6 +82,11 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers> implements Lo
         }
     }
 
+    @UiHandler("register")
+    void onRegisterClicked(ClickEvent event) {
+        getUiHandlers().bounceToRegister();
+    }
+
     private void processLoginAction() {
         UserCredentials credentials = get();
 

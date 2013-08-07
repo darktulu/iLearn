@@ -88,6 +88,11 @@ public class RegisterView extends ValidatedViewWithUiHandlers<RegisterUiHandlers
         }
     }
 
+    @UiHandler("login")
+    void onLoginClicked(ClickEvent event) {
+            getUiHandlers().bounceToLogin();
+    }
+
     private void processRegisterAction() {
         UserVO user = get();
 

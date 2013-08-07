@@ -50,6 +50,12 @@ public class RegisterPresenter extends Presenter<RegisterPresenter.MyView, Regis
     }
 
     @Override
+    public void bounceToLogin() {
+        PlaceRequest place = new PlaceRequest.Builder().nameToken(NameTokens.getLogin()).build();
+        placeManager.revealPlace(place);
+    }
+
+    @Override
     public void register(UserVO user) {
         dispatcher.execute(registrationService.register(user), new AsyncCallbackImpl<GetResult<Long>>() {
             @Override

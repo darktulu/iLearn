@@ -8,53 +8,64 @@
         .title:hover {
             cursor: pointer;
             color: #646464;
-            text-shadow: 0 0 5px rgba(136, 136, 136, 0.7);
+            text-shadow: 0 0 5px rgba(136, 136, 136, 0.4);
         }
 
         .summary {
-            margin-top: 20px;
+            height: 220px;
+            overflow: hidden;
+            font-size: 12px;
+            text-align: justify;
             text-shadow: 0 0 1px rgba(136, 136, 136, 0.3);
         }
 
         .summaryView {
-            display: inline-block;
-            background-color: white;
-            margin: 10px;
-            width: 300px;
-            height: 200px;
-            border : #ccc solid 1px;
-        }
-
-        .summaryView:hover {
-            height: 200px;
-            background-color: rgba(255, 255, 255, 0.5);
+            padding: 0 15px 15px;
         }
 
         .sub {
             color: dimgrey;
             font-size: 0.8em;
             text-shadow: 0 0 1px rgba(136, 136, 136, 0.3);
+            background-color: whitesmoke;
+            border-top: solid 1px #ccc;
+            padding: 10px 0 5px 10px;
         }
 
         .inline {
             display: inline;
         }
+
+        .wrapper {
+            display: inline-block;
+            background-color: white;
+            margin: 10px;
+            width: 300px;
+            height: 350px;
+            border: #ccc solid 1px;
+        }
+
+        .wrapper:hover {
+            border: #428dcc solid 1px;
+        }
     </ui:style>
-    <g:HTMLPanel addStyleNames="{style.summaryView}">
-        <h2>
-            <g:Label ui:field="title" addStyleNames="{style.title}"/>
-        </h2>
-        <div class="{style.sub}">
-            <p>
-                <g:Label ui:field="created" addStyleNames="{style.inline}"/>
-            </p>
-            <p>
-                Nombre de vues :
-                <g:Label ui:field="views" addStyleNames="{style.inline}"/>
-            </p>
-        </div>
-        <div style="{style.summary}">
-            <g:Label ui:field="summary"/>
-        </div>
-    </g:HTMLPanel>
+    <g:SimpleLayoutPanel addStyleNames="{style.wrapper}" ui:field="panel">
+            <g:DockLayoutPanel unit='PX'>
+                <g:center>
+                    <g:HTMLPanel addStyleNames="{style.summaryView}">
+                        <h3>
+                            <g:Label ui:field="title" addStyleNames="{style.title}"/>
+                        </h3>
+                        <g:HTMLPanel addStyleNames="{style.summary}">
+                            <g:Label ui:field="summary"/>
+                        </g:HTMLPanel>
+                    </g:HTMLPanel>
+                </g:center>
+                <g:south size="40">
+                    <g:HTMLPanel addStyleNames="{style.sub}">
+                        <g:Label ui:field="created" addStyleNames="{style.inline}"/>
+                    </g:HTMLPanel>
+                </g:south>
+            </g:DockLayoutPanel>
+    </g:SimpleLayoutPanel>
 </ui:UiBinder>

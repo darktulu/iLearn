@@ -17,8 +17,6 @@
 package com.simu.ilearn.app.client.web.application.learn;
 
 import com.gwtplatform.mvp.client.UiHandlers;
-import com.simu.ilearn.common.shared.vo.LearnVO;
 
 public interface LearnUiHandlers extends UiHandlers {
-    void saveLearn(LearnVO learn);
 }
