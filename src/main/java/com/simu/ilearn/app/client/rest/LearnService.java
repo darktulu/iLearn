@@ -4,6 +4,7 @@ import com.gwtplatform.dispatch.shared.Action;
 import com.gwtplatform.dispatch.shared.rest.RestService;
 import com.simu.ilearn.common.shared.dispatch.GetResult;
 import com.simu.ilearn.common.shared.dispatch.GetResults;
+import com.simu.ilearn.common.shared.dispatch.Response;
 import com.simu.ilearn.common.shared.dispatch.ValidatedResponse;
 import com.simu.ilearn.common.shared.rest.PathParameter;
 import com.simu.ilearn.common.shared.rest.ResourcesPath;
@@ -23,7 +24,7 @@ public interface LearnService extends RestService {
 
     @DELETE
     @Path(PathParameter.ID)
-    Action<GetResult<Void>> delete(@PathParam(RestParameter.ID) Long id);
+    Action<Response> delete(@PathParam(RestParameter.ID) Long id);
 
     @GET
     Action<GetResults<LearnVO>> loadAll();

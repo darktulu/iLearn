@@ -3,6 +3,7 @@
     <ui:style>
         .body {
             background-color: #f5f5f5;
+            overflow: auto;
         }
 
         .wrapper {
@@ -10,6 +11,7 @@
             max-width: 1000px;
             overflow: auto;
         }
+
         .center {
             margin: auto;
         }

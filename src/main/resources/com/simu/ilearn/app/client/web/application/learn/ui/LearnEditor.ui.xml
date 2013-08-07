@@ -19,7 +19,14 @@
         .inline {
             display: inline-block;
             width: 470px;
-            border: 1px solid #cbcbcb !important;
+            border: 1px solid #cbcbcb;
+            -webkit-transition: border linear .2s;
+            -moz-transition: border linear .2s;
+            -o-transition: border linear .2s;
+        }
+
+        .inline:hover {
+            border: 1px solid rgb(0, 153, 255);
         }
     </ui:style>
     <g:HTMLPanel addStyleNames="{style.inline}">

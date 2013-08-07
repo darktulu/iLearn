@@ -4,4 +4,6 @@ import com.gwtplatform.mvp.client.UiHandlers;
 
 public interface LearnWidgetUiHandlers extends UiHandlers {
     void showDetail();
+
+    void delete();
 }

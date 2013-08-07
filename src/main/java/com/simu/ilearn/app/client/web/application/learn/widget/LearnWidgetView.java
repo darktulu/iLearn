@@ -58,4 +58,9 @@ public class LearnWidgetView extends ViewWithUiHandlers<LearnWidgetUiHandlers> i
     void showDetail(ClickEvent event) {
         getUiHandlers().showDetail();
     }
+
+    @UiHandler("delete")
+    void onDeleteClicked(ClickEvent event) {
+        getUiHandlers().delete();
+    }
 }
