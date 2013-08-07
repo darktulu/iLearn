@@ -30,6 +30,7 @@ import com.simu.ilearn.app.client.place.NameTokens;
 import com.simu.ilearn.app.client.resource.message.MessageBundle;
 import com.simu.ilearn.app.client.rest.LearnService;
 import com.simu.ilearn.app.client.web.application.ApplicationPresenter;
+import com.simu.ilearn.app.client.web.application.learn.event.LearnChangedEvent;
 import com.simu.ilearn.app.client.web.application.learn.widget.AddLearnPresenter;
 import com.simu.ilearn.app.client.web.application.learn.widget.LearnWidgetFactory;
 import com.simu.ilearn.common.client.rest.AsyncCallbackImpl;
@@ -44,7 +45,7 @@ import javax.inject.Inject;
 import java.util.List;
 
 public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresenter.MyProxy>
-        implements LearnUiHandlers {
+        implements LearnUiHandlers, LearnChangedEvent.LearnChangedHandler {
     public interface MyView extends View, HasUiHandlers<LearnUiHandlers> {
     }
 
@@ -84,6 +85,15 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
     }
 
 
+    @Override
+    public void onLearnChanged(LearnChangedEvent event) {
+        loadEntities();
+    }
+
+    @Override
+    protected void onBind() {
+        addRegisteredHandler(LearnChangedEvent.getType(), this);
+    }
 
     @Override
     protected void onReveal() {

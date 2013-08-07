@@ -7,6 +7,7 @@ import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.simu.ilearn.app.client.rest.LearnService;
+import com.simu.ilearn.app.client.web.application.learn.event.LearnChangedEvent;
 import com.simu.ilearn.common.client.rest.AsyncCallbackImpl;
 import com.simu.ilearn.common.shared.dispatch.ValidatedResponse;
 import com.simu.ilearn.common.shared.vo.LearnVO;
@@ -20,30 +21,26 @@ public class AddLearnPresenter extends PresenterWidget<AddLearnPresenter.MyView>
 
     private final DispatchAsync dispatcher;
     private final LearnService learnService;
-    private final PlaceManager placeManager;
-    private LearnVO learn;
 
     @Inject
-    public AddLearnPresenter(final EventBus eventBus, final MyView view,
-                             final PlaceManager placeManager,
+    public AddLearnPresenter(EventBus eventBus, MyView view,
                              DispatchAsync dispatcher,
                              LearnService learnService) {
         super(eventBus, view);
 
         this.dispatcher = dispatcher;
         this.learnService = learnService;
-        this.placeManager = placeManager;
 
         getView().setUiHandlers(this);
     }
 
     @Override
-    public void saveLearn(LearnVO learn) {
+    public void saveLearn(final LearnVO learn) {
         dispatcher.execute(learnService.create(learn), new AsyncCallbackImpl<ValidatedResponse>() {
-
             @Override
             public void onReceive(ValidatedResponse response) {
                 getView().editLearn(new LearnVO());
+                LearnChangedEvent.fire(this, learn);
             }
         });
     }

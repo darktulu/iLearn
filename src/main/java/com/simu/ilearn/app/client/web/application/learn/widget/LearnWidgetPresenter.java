@@ -1,6 +1,5 @@
 package com.simu.ilearn.app.client.web.application.learn.widget;
 
-import com.google.gwt.user.client.Window;
 import com.google.inject.assistedinject.Assisted;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.dispatch.shared.DispatchAsync;
@@ -11,6 +10,7 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.simu.ilearn.app.client.place.NameTokens;
 import com.simu.ilearn.app.client.rest.LearnService;
+import com.simu.ilearn.app.client.web.application.learn.event.LearnChangedEvent;
 import com.simu.ilearn.common.client.rest.AsyncCallbackImpl;
 import com.simu.ilearn.common.shared.dispatch.Response;
 import com.simu.ilearn.common.shared.vo.LearnVO;
@@ -25,17 +25,17 @@ public class LearnWidgetPresenter extends PresenterWidget<LearnWidgetPresenter.M
     private final PlaceManager placeManager;
     private final DispatchAsync dispatcher;
     private final LearnService learnService;
-    private LearnVO article;
+    private LearnVO learn;
 
     @Inject
     public LearnWidgetPresenter(EventBus eventBus, MyView view,
                                 PlaceManager placeManager,
                                 DispatchAsync dispatcher,
                                 LearnService learnService,
-                                @Assisted LearnVO article) {
+                                @Assisted LearnVO learn) {
         super(eventBus, view);
 
-        this.article = article;
+        this.learn = learn;
         this.placeManager = placeManager;
         this.dispatcher = dispatcher;
         this.learnService = learnService;
@@ -47,23 +47,23 @@ public class LearnWidgetPresenter extends PresenterWidget<LearnWidgetPresenter.M
     public void showDetail() {
         PlaceRequest place = new PlaceRequest.Builder()
                 .nameToken(NameTokens.getDetail())
-                .with("id", article.getId().toString())
+                .with("id", learn.getId().toString())
                 .build();
         placeManager.revealPlace(place);
     }
 
     @Override
     public void delete() {
-        dispatcher.execute(learnService.delete(article.getId()), new AsyncCallbackImpl<Response>() {
+        dispatcher.execute(learnService.delete(learn.getId()), new AsyncCallbackImpl<Response>() {
             @Override
             public void onReceive(Response response) {
-                Window.alert("cool");
+                LearnChangedEvent.fire(this, learn);
             }
         });
     }
 
     @Override
     protected void onReveal() {
-        getView().setData(article);
+        getView().setData(learn);
     }
 }
