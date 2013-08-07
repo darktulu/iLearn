@@ -12,7 +12,10 @@
         }
 
         .summary {
-            margin-top: 20px;
+            height: 220px;
+            overflow: hidden;
+            font-size: 12px;
+            text-align: justify;
             text-shadow: 0 0 1px rgba(136, 136, 136, 0.3);
         }
 
@@ -46,23 +49,23 @@
             border: #428dcc solid 1px;
         }
     </ui:style>
-    <g:SimpleLayoutPanel addStyleNames="{style.wrapper}">
-        <g:DockLayoutPanel unit='PX'>
-            <g:center>
-                <g:HTMLPanel addStyleNames="{style.summaryView}">
-                    <h3>
-                        <g:Label ui:field="title" addStyleNames="{style.title}"/>
-                    </h3>
-                    <g:HTMLPanel addStyleNames="{style.summary}">
-                        <g:Label ui:field="summary"/>
+    <g:SimpleLayoutPanel addStyleNames="{style.wrapper}" ui:field="panel">
+            <g:DockLayoutPanel unit='PX'>
+                <g:center>
+                    <g:HTMLPanel addStyleNames="{style.summaryView}">
+                        <h3>
+                            <g:Label ui:field="title" addStyleNames="{style.title}"/>
+                        </h3>
+                        <g:HTMLPanel addStyleNames="{style.summary}">
+                            <g:Label ui:field="summary"/>
+                        </g:HTMLPanel>
                     </g:HTMLPanel>
-                </g:HTMLPanel>
-            </g:center>
-            <g:south size="40">
-                <g:HTMLPanel addStyleNames="{style.sub}">
-                <g:Label ui:field="created" addStyleNames="{style.inline}"/>
-                </g:HTMLPanel>
-            </g:south>
-        </g:DockLayoutPanel>
+                </g:center>
+                <g:south size="40">
+                    <g:HTMLPanel addStyleNames="{style.sub}">
+                        <g:Label ui:field="created" addStyleNames="{style.inline}"/>
+                    </g:HTMLPanel>
+                </g:south>
+            </g:DockLayoutPanel>
     </g:SimpleLayoutPanel>
 </ui:UiBinder>

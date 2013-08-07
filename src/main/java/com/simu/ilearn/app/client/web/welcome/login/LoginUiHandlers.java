@@ -5,4 +5,6 @@ import com.simu.ilearn.common.shared.dto.UserCredentials;
 
 public interface LoginUiHandlers extends UiHandlers {
     void login(UserCredentials credentials);
+
+    void bounceToRegister();
 }

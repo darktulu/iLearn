@@ -7,14 +7,11 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.FocusEvent;
 import com.google.gwt.event.dom.client.FocusHandler;
+import com.google.gwt.query.client.Function;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HTMLPanel;
-import com.google.gwt.user.client.ui.TextArea;
-import com.google.gwt.user.client.ui.TextBox;
-import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.user.client.ui.*;
 import com.simu.ilearn.common.client.util.EditorView;
 import com.simu.ilearn.common.shared.vo.LearnVO;
 
@@ -30,7 +27,7 @@ public class LearnEditor extends Composite implements EditorView<LearnVO> {
     }
 
     @UiField
-    HTMLPanel panel;
+    FocusPanel panel;
 
     @UiField
     TextBox title;
@@ -51,21 +48,7 @@ public class LearnEditor extends Composite implements EditorView<LearnVO> {
         $(content).id("content");
 
         title.getElement().setAttribute("placeholder", "Title");
-        content.getElement().setAttribute("placeholder", "Content");
-
-        panel.addDomHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent event) {
-                if (content.isVisible()) {
-                    content.setVisible(false);
-                    title.getElement().setAttribute("placeholder", "Add learn");
-                } else {
-                    content.setVisible(true);
-                    title.getElement().setAttribute("placeholder", "Title");
-                }
-            }
-        }, ClickEvent.getType());
-
+        content.getElement().setAttribute("placeholder", "Add learn");
     }
 
     @Override
