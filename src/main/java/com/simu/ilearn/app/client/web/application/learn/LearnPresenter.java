@@ -16,7 +16,6 @@
 
 package com.simu.ilearn.app.client.web.application.learn;
 
-import com.github.gwtbootstrap.client.ui.constants.AlertType;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.dispatch.shared.DispatchAsync;
 import com.gwtplatform.mvp.client.HasUiHandlers;
@@ -35,14 +34,10 @@ import com.simu.ilearn.app.client.web.application.learn.widget.AddLearnPresenter
 import com.simu.ilearn.app.client.web.application.learn.widget.LearnWidgetFactory;
 import com.simu.ilearn.common.client.rest.AsyncCallbackImpl;
 import com.simu.ilearn.common.client.security.LoggedInGatekeeper;
-import com.simu.ilearn.common.client.widget.messages.Message;
-import com.simu.ilearn.common.client.widget.messages.event.MessageEvent;
 import com.simu.ilearn.common.shared.dispatch.GetResults;
-import com.simu.ilearn.common.shared.dispatch.ValidatedResponse;
 import com.simu.ilearn.common.shared.vo.LearnVO;
 
 import javax.inject.Inject;
-import java.util.List;
 
 public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresenter.MyProxy>
         implements LearnUiHandlers, LearnChangedEvent.LearnChangedHandler {
@@ -87,7 +82,11 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
 
     @Override
     public void onLearnChanged(LearnChangedEvent event) {
-        loadEntities();
+        if (event.getMyType() == LearnChangedEvent.MyType.ADD) {
+            addToSlot(LEARN_LIST_SLOT, learnWidgetFactory.create(event.getLearn()));
+        } else {
+            loadEntities();
+        }
     }
 
     @Override

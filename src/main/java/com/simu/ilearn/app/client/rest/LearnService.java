@@ -20,7 +20,7 @@ import javax.ws.rs.PathParam;
 @Path(ResourcesPath.LEARN)
 public interface LearnService extends RestService {
     @POST
-    Action<ValidatedResponse> create(LearnVO entity);
+    Action<GetResult<Long>> create(LearnVO entity);
 
     @DELETE
     @Path(PathParameter.ID)

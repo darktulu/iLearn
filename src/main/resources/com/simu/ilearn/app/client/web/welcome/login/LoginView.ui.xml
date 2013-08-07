@@ -1,20 +1,99 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:b='urn:import:com.github.gwtbootstrap.client.ui'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <ui:style>
+        .container {
+            background: #438eb9;
+            position: absolute;
+            top: -300px;
+            left: -300px;
+            min-height: 600px;
+            min-width: 2200px;
+            z-index: -1;
+            -webkit-transform: rotate(-20deg);
+            -moz-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+        }
+
+        .resetInput {
+            width: 450px;
+            margin: 0 !important;
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
+            -webkit-transition: border linear .2s, box-shadow linear .2s, width linear .2s;
+            -moz-transition: border linear .2s, box-shadow linear .2s, width linear .2s;
+            -o-transition: border linear .2s, box-shadow linear .2s, width linear .2s;
+            background-color: #ffffff;
+            border: 1px solid #438eb9 !important;
+            padding: 5px 10px !important;
+            resize: none !important;
+        }
+
+        .inline {
+            display: inline-block;
+            padding: 10px;
+            margin-top: 20px;
+            color: white;
+            font-size: 20px;
+            line-height: 25px;
+        }
+
+        .first {
+            width: 600px;
+            margin: auto;
+        }
+
+        .myButton {
+            color: #ffffff;
+            opacity: .55;
+            font-size: 30px;
+            text-decoration: none;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            -webkit-transition: opacity linear .2s, background-color linear .2s, border linear .2s;
+            -moz-transition: opacity linear .2s, background-color linear .2s, border linear .2s;
+            -o-transition: opacity linear .2s, background-color linear .2s, border linear .2s;
+            background-color: rgb(82, 163, 209);
+            padding: 10px 20px;
+            margin: 2px;
+        }
+
+        .myButton:hover {
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 1;
+            background-color: #005580;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+        .title {
+            color: white;
+            text-shadow: 0 0 1px rgba(136, 136, 136, 0.3);
+            font-size: 70px;
+            display: inline-block;
+            margin: 60px 0 0 30px;
+        }
+    </ui:style>
     <g:HTMLPanel>
-        <h2>Login to the application</h2>
-
         <div>
-            <g:Label ui:field="loginError" visible="false"
-                     text="Invalid e-mail or password."/>
+            <div class="{style.container}" />
+            <div class="{style.title}">iLearn</div>
+            <div class="{style.first}">
+                <div class="{style.inline}">
+                    <g:Label ui:field="loginError" visible="false" styleName="alert-error"
+                             text="Invalid e-mail or password."/>
 
-            <g:Label text="Email"/>
-            <g:TextBox ui:field="username"/>
+                    <g:Label text="Email"/>
+                    <g:TextBox ui:field="username" addStyleNames="{style.resetInput}"/>
 
-            <g:Label text="Password"/>
-            <g:PasswordTextBox ui:field="password"/>
-
-            <g:Button ui:field="login" text="Login"/>
-            <g:Button ui:field="register" text="register"/>
+                    <g:Label text="Password"/>
+                    <g:PasswordTextBox ui:field="password" addStyleNames="{style.resetInput}"/>
+                </div>
+                <div class="{style.inline}">
+                    <b:Button ui:field="login" text="Login" styleName="{style.myButton}"/>
+                    <b:Button ui:field="register" text="register" styleName="{style.myButton}"/>
+                </div>
+            </div>
         </div>
     </g:HTMLPanel>
 </ui:UiBinder>

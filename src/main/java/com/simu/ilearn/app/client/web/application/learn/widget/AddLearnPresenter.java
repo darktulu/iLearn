@@ -9,6 +9,7 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.simu.ilearn.app.client.rest.LearnService;
 import com.simu.ilearn.app.client.web.application.learn.event.LearnChangedEvent;
 import com.simu.ilearn.common.client.rest.AsyncCallbackImpl;
+import com.simu.ilearn.common.shared.dispatch.GetResult;
 import com.simu.ilearn.common.shared.dispatch.ValidatedResponse;
 import com.simu.ilearn.common.shared.vo.LearnVO;
 
@@ -36,11 +37,12 @@ public class AddLearnPresenter extends PresenterWidget<AddLearnPresenter.MyView>
 
     @Override
     public void saveLearn(final LearnVO learn) {
-        dispatcher.execute(learnService.create(learn), new AsyncCallbackImpl<ValidatedResponse>() {
+        dispatcher.execute(learnService.create(learn), new AsyncCallbackImpl<GetResult<Long>>() {
             @Override
-            public void onReceive(ValidatedResponse response) {
+            public void onReceive(GetResult<Long> response) {
                 getView().editLearn(new LearnVO());
-                LearnChangedEvent.fire(this, learn);
+                learn.setId(response.getPayload());
+                LearnChangedEvent.fire(this, learn, LearnChangedEvent.MyType.ADD);
             }
         });
     }

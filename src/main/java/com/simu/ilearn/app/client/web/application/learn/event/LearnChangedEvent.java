@@ -10,27 +10,35 @@ public class LearnChangedEvent extends GwtEvent<LearnChangedEvent.LearnChangedHa
         void onLearnChanged(LearnChangedEvent event);
     }
 
+    public enum MyType {ADD, DELETE}
+
     private static final Type<LearnChangedHandler> TYPE = new Type<LearnChangedHandler>();
 
+    private MyType myType;
     private LearnVO learn;
 
     public LearnChangedEvent() {
     }
 
-    public LearnChangedEvent(LearnVO learn) {
+    public LearnChangedEvent(LearnVO learn, MyType myType) {
         this.learn = learn;
+        this.myType = myType;
     }
 
     public static Type<LearnChangedHandler> getType() {
         return TYPE;
     }
 
+    public MyType getMyType() {
+        return myType;
+    }
+
     public LearnVO getLearn() {
         return learn;
     }
 
-    public static void fire(HasHandlers source, LearnVO learn) {
-        source.fireEvent(new LearnChangedEvent(learn));
+    public static void fire(HasHandlers source, LearnVO learn, MyType type) {
+        source.fireEvent(new LearnChangedEvent(learn, type));
     }
 
     public static void fire(HasHandlers source) {

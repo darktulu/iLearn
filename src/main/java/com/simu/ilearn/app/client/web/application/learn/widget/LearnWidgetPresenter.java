@@ -57,7 +57,7 @@ public class LearnWidgetPresenter extends PresenterWidget<LearnWidgetPresenter.M
         dispatcher.execute(learnService.delete(learn.getId()), new AsyncCallbackImpl<Response>() {
             @Override
             public void onReceive(Response response) {
-                LearnChangedEvent.fire(this, learn);
+                LearnChangedEvent.fire(this, learn, LearnChangedEvent.MyType.DELETE);
             }
         });
     }

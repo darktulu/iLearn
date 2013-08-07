@@ -2,6 +2,7 @@ package com.simu.ilearn.server.controller;
 
 import com.simu.ilearn.common.shared.dispatch.GetResult;
 import com.simu.ilearn.common.shared.dispatch.GetResults;
+import com.simu.ilearn.common.shared.dispatch.NoResult;
 import com.simu.ilearn.common.shared.dispatch.Response;
 import com.simu.ilearn.common.shared.dispatch.ValidatedResponse;
 import com.simu.ilearn.common.shared.rest.PathParameter;
@@ -31,17 +32,16 @@ public class LearnController extends BaseController {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
-    public ValidatedResponse create(@RequestBody @Valid LearnVO learn) {
-        learnService.create(learn);
-        return new ValidatedResponse();
+    public GetResult<Long> create(@RequestBody @Valid LearnVO learn) {
+        return new GetResult<Long>(learnService.create(learn));
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = PathParameter.ID)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Response delete(@PathVariable(RestParameter.ID) Long id) {
+    public NoResult delete(@PathVariable(RestParameter.ID) Long id) {
         learnService.delete(id);
-        return new Response();
+        return new NoResult();
     }
 
     @RequestMapping(method = RequestMethod.GET)

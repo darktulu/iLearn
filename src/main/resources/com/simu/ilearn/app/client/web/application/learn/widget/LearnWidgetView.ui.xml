@@ -62,9 +62,6 @@
             font-size: 20px;
             text-decoration: none;
             text-align: center;
-            -webkit-transition: opacity linear .2s;
-            -moz-transition: opacity linear .2s;
-            -o-transition: opacity linear .2s;
         }
 
         .myButton:hover {
@@ -88,8 +85,8 @@
             <g:south size="40">
                 <g:HTMLPanel addStyleNames="{style.sub}">
                     <g:Label ui:field="created" addStyleNames="{style.inline}"/>
-                    <g:HTMLPanel addStyleNames="{style.toolbar}">
-                        <b:Button addStyleNames="{style.inline}" icon="MINUS_SIGN" styleName="{style.myButton}"/>
+                    <g:HTMLPanel addStyleNames="{style.toolbar}" ui:field="toolbar" visible="false">
+                        <b:Button addStyleNames="{style.inline}" icon="FOLDER_OPEN" styleName="{style.myButton}"/>
                         <b:Button addStyleNames="{style.inline}" icon="TRASH" styleName="{style.myButton}" ui:field="delete"/>
                     </g:HTMLPanel>
                 </g:HTMLPanel>
