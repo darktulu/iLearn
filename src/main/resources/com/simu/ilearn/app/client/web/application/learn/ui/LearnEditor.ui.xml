@@ -2,8 +2,8 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <ui:style>
         .resetInput {
-            width: 100%;
-            margin-bottom: 0 !important;
+            width: 450px;
+            margin: 0 !important;
             -webkit-box-shadow: none !important;
             -moz-box-shadow: none !important;
             box-shadow: none !important;
@@ -11,19 +11,19 @@
             -moz-transition: border linear .2s, box-shadow linear .2s, width linear .2s;
             -o-transition: border linear .2s, box-shadow linear .2s, width linear .2s;
             background-color: #ffffff;
-            border: solid white 1px !important;
+            border: none !important;
+            padding: 5px 10px !important;
+            resize:none !important;
         }
 
-        .learn {
-            padding: 5px;
-            background-color: #efeff0;
-            border: 1px solid #cbcbcb;
+        .inline {
+            display: inline-block;
+            width: 470px;
+            border: 1px solid #cbcbcb !important;
         }
     </ui:style>
-    <g:FocusPanel addStyleNames="{style.learn}" ui:field="panel">
-        <g:HTMLPanel>
-            <g:TextBox ui:field="title" styleName="{style.resetInput}"/>
-            <g:TextArea ui:field="content" styleName="{style.resetInput}"/>
-        </g:HTMLPanel>
-    </g:FocusPanel>
+    <g:HTMLPanel addStyleNames="{style.inline}">
+        <g:TextBox ui:field="title" styleName="{style.resetInput}"/>
+        <g:TextArea ui:field="content" styleName="{style.resetInput}"/>
+    </g:HTMLPanel>
 </ui:UiBinder>

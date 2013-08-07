@@ -10,15 +10,18 @@
             max-width: 1000px;
             overflow: auto;
         }
+        .center {
+            margin: auto;
+        }
     </ui:style>
     <g:HTMLPanel addStyleNames="{style.body}">
 
         <div class="{style.wrapper}">
-            <g:HTMLPanel ui:field="addPanel"/>
+            <g:HTMLPanel ui:field="addPanel" width="582px" addStyleNames="{style.center}"/>
         </div>
 
         <div class="{style.wrapper}">
-            <g:HTMLPanel ui:field="tablePanel"/>
+            <g:HTMLPanel ui:field="tablePanel" width="966px" addStyleNames="{style.center}"/>
         </div>
     </g:HTMLPanel>
 </ui:UiBinder>

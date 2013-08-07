@@ -1,16 +1,40 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:b='urn:import:com.github.gwtbootstrap.client.ui'
              xmlns:s='urn:import:com.simu.ilearn.app.client.web.application.learn.ui'>
     <ui:style>
-        .wrapper {
-            margin: auto;
-            max-width: 1000px;
-            overflow: auto;
+        .learn {
+            padding: 10px 10px 10px 20px;
+            background-color: #efeff0;
+            border: 1px solid #cbcbcb;
+            width: 550px;
+        }
+
+        .myButton {
+            float: right;
+            height: 80px;
+            width: 70px;
+            color: #444;
+            opacity: .55;
+            line-height: 80px;
+            font-size: 30px;
+            text-decoration: none;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.1);
+            -webkit-transition:  opacity linear .2s, background-color linear .2s, border linear .2s;
+            -moz-transition:  opacity linear .2s, background-color linear .2s, border linear .2s;
+            -o-transition: opacity linear .2s, background-color linear .2s, border linear .2s;
+        }
+        .myButton:hover {
+            color: #444;
+            text-decoration: none;
+            opacity: 1;
+            background-color: #f5f5f5;
+            border: 1px solid rgba(0,0,0,0.2);
         }
     </ui:style>
-    <g:HTMLPanel styleName="{style.wrapper}">
+    <g:HTMLPanel styleName="{style.learn}">
         <s:LearnEditor ui:field="learnEditor"/>
-        <g:Button ui:field="submit"/>
-        <g:HTMLPanel ui:field="addPanel"/>
+        <b:Button ui:field="submit" styleName="{style.myButton}" icon="OK"/>
     </g:HTMLPanel>
 </ui:UiBinder>
