@@ -34,6 +34,7 @@ import com.simu.ilearn.app.client.web.application.learn.widget.AddLearnPresenter
 import com.simu.ilearn.app.client.web.application.learn.widget.LearnWidgetFactory;
 import com.simu.ilearn.common.client.rest.AsyncCallbackImpl;
 import com.simu.ilearn.common.client.security.LoggedInGatekeeper;
+import com.simu.ilearn.common.shared.dispatch.GetResult;
 import com.simu.ilearn.common.shared.dispatch.GetResults;
 import com.simu.ilearn.common.shared.vo.LearnVO;
 
@@ -83,7 +84,7 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
     @Override
     public void onLearnChanged(LearnChangedEvent event) {
         if (event.getMyType() == LearnChangedEvent.MyType.ADD) {
-            addToSlot(LEARN_LIST_SLOT, learnWidgetFactory.create(event.getLearn()));
+            loadLearn(event.getLearn().getId());
         } else {
             loadEntities();
         }
@@ -108,6 +109,15 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
                 for (LearnVO learn : response.getPayload()) {
                     addToSlot(LEARN_LIST_SLOT, learnWidgetFactory.create(learn));
                 }
+            }
+        });
+    }
+
+    private void loadLearn(Long learnId) {
+        dispatcher.execute(learnService.loadOne(learnId), new AsyncCallbackImpl<GetResult<LearnVO>>() {
+            @Override
+            public void onReceive(GetResult<LearnVO> response) {
+                addToSlot(LEARN_LIST_SLOT, learnWidgetFactory.create(response.getPayload()));
             }
         });
     }
