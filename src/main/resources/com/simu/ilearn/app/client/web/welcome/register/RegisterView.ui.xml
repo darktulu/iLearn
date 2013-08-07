@@ -23,6 +23,7 @@
             </b:ControlGroup>
 
             <g:Button ui:field="register" text="Register"/>
+            <g:Button ui:field="login" text="Login"/>
         </div>
     </g:HTMLPanel>
 </ui:UiBinder>

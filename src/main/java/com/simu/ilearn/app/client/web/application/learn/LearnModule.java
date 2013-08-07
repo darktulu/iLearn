@@ -18,9 +18,7 @@ package com.simu.ilearn.app.client.web.application.learn;
 
 import com.google.gwt.inject.client.assistedinject.GinFactoryModuleBuilder;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
-import com.simu.ilearn.app.client.web.application.learn.widget.LearnWidgetFactory;
-import com.simu.ilearn.app.client.web.application.learn.widget.LearnWidgetPresenter;
-import com.simu.ilearn.app.client.web.application.learn.widget.LearnWidgetView;
+import com.simu.ilearn.app.client.web.application.learn.widget.*;
 
 public class LearnModule extends AbstractPresenterModule {
     @Override
@@ -30,6 +28,8 @@ public class LearnModule extends AbstractPresenterModule {
         bindPresenter(LearnPresenter.class, LearnPresenter.MyView.class, LearnView.class, LearnPresenter.MyProxy.class);
         bindPresenter(LearnDetailPresenter.class, LearnDetailPresenter.MyView.class,
                 LearnDetailView.class, LearnDetailPresenter.MyProxy.class);
+
+        bindPresenterWidget(AddLearnPresenter.class, AddLearnPresenter.MyView.class, AddLearnView.class);
 
         bindSharedView(LearnWidgetPresenter.MyView.class, LearnWidgetView.class);
 

@@ -8,6 +8,8 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
+import com.gwtplatform.mvp.client.proxy.PlaceManager;
+import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.simu.ilearn.common.client.rest.AsyncCallbackImpl;
 import com.simu.ilearn.common.client.security.SecurityUtils;
@@ -35,6 +37,7 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
     private final AuthenticationService authenticationService;
     private final SecurityUtils securityUtils;
     private final BootstrapperImpl bootstrapper;
+    private final PlaceManager placeManager;
 
     @Inject
     public LoginPresenter(EventBus eventBus,
@@ -43,10 +46,12 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
                           DispatchAsync dispatcher,
                           AuthenticationService authenticationService,
                           SecurityUtils securityUtils,
+                          PlaceManager placeManager,
                           BootstrapperImpl bootstrapper) {
         super(eventBus, view, proxy, RootPresenter.TYPE_SetMainContent);
 
         this.dispatcher = dispatcher;
+        this.placeManager = placeManager;
         this.authenticationService = authenticationService;
         this.securityUtils = securityUtils;
         this.bootstrapper = bootstrapper;
@@ -72,5 +77,11 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
     @Override
     protected void onReveal() {
         getView().edit(new UserCredentials());
+    }
+
+    @Override
+    public void bounceToRegister() {
+        PlaceRequest place = new PlaceRequest.Builder().nameToken(NameTokens.getRegister()).build();
+        placeManager.revealPlace(place);
     }
 }

@@ -30,6 +30,7 @@ import com.simu.ilearn.app.client.place.NameTokens;
 import com.simu.ilearn.app.client.resource.message.MessageBundle;
 import com.simu.ilearn.app.client.rest.LearnService;
 import com.simu.ilearn.app.client.web.application.ApplicationPresenter;
+import com.simu.ilearn.app.client.web.application.learn.widget.AddLearnPresenter;
 import com.simu.ilearn.app.client.web.application.learn.widget.LearnWidgetFactory;
 import com.simu.ilearn.common.client.rest.AsyncCallbackImpl;
 import com.simu.ilearn.common.client.security.LoggedInGatekeeper;
@@ -45,9 +46,6 @@ import java.util.List;
 public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresenter.MyProxy>
         implements LearnUiHandlers {
     public interface MyView extends View, HasUiHandlers<LearnUiHandlers> {
-        void setData(List<LearnVO> data);
-
-        void editLearn(LearnVO learn);
     }
 
     @ProxyStandard
@@ -62,6 +60,7 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
     private final MessageBundle messageBundle;
 
     public static final Object LEARN_LIST_SLOT = new Object();
+    public static final Object LEARN_ADD_SLOT = new Object();
 
     @Inject
     public LearnPresenter(EventBus eventBus,
@@ -70,6 +69,7 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
                           DispatchAsync dispatcher,
                           LearnService learnService,
                           LearnWidgetFactory learnWidgetFactory,
+                          AddLearnPresenter addLearnPresenter,
                           MessageBundle messageBundle) {
         super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetMainContent);
 
@@ -79,27 +79,14 @@ public class LearnPresenter extends Presenter<LearnPresenter.MyView, LearnPresen
         this.messageBundle = messageBundle;
 
         getView().setUiHandlers(this);
+
+        setInSlot(LEARN_ADD_SLOT, addLearnPresenter);
     }
 
-    @Override
-    public void saveLearn(LearnVO learn) {
-        dispatcher.execute(learnService.create(learn), new AsyncCallbackImpl<ValidatedResponse>() {
 
-            @Override
-            public void onReceive(ValidatedResponse response) {
-                loadEntities();
-                getView().editLearn(new LearnVO());
-
-                Message message = new Message.Builder(messageBundle.myEntitySaveSucess())
-                        .style(AlertType.SUCCESS).build();
-                MessageEvent.fire(this, message);
-            }
-        });
-    }
 
     @Override
     protected void onReveal() {
-        getView().editLearn(new LearnVO());
         loadEntities();
     }
 

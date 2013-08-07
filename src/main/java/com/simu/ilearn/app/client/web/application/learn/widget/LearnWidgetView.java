@@ -1,12 +1,15 @@
 package com.simu.ilearn.app.client.web.application.learn.widget;
 
-import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.*;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.text.client.DateTimeFormatRenderer;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.SimpleLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
@@ -23,11 +26,24 @@ public class LearnWidgetView extends ViewWithUiHandlers<LearnWidgetUiHandlers> i
     @UiField
     Label created;
     @UiField
-    Label views;
+    SimpleLayoutPanel panel;
 
     @Inject
     public LearnWidgetView(final Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
+
+//        panel.addFocusHandler(new FocusHandler() {
+//            @Override
+//            public void onFocus(FocusEvent focusEvent) {
+//
+//            }
+//        });
+//        panel.addBlurHandler(new BlurHandler() {
+//            @Override
+//            public void onBlur(BlurEvent blurEvent) {
+//                Window.alert("blur");
+//            }
+//        });
     }
 
     @Override
