@@ -9,6 +9,24 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 public class UserSpec {
+    public static Specification<User> usernameIs(final String username) {
+        return new Specification<User>() {
+            @Override
+            public Predicate toPredicate(Root<User> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+                return cb.like(root.<String>get("username"), username);
+            }
+        };
+    }
+
+    public static Specification<User> emailIs(final String email) {
+        return new Specification<User>() {
+            @Override
+            public Predicate toPredicate(Root<User> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+                return cb.like(root.<String>get("email"), email);
+            }
+        };
+    }
+
     public static Specification<User> lastNameLike(final String lastName) {
         return new Specification<User>() {
             @Override
