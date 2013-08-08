@@ -12,6 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
 
+import static com.simu.ilearn.server.repos.spec.UserSpec.emailIs;
+import static com.simu.ilearn.server.repos.spec.UserSpec.usernameIs;
+import static org.springframework.data.jpa.domain.Specifications.where;
+
 @Component
 public class SecurityContextProviderImpl implements SecurityContextProvider {
     @Inject
@@ -24,10 +28,23 @@ public class SecurityContextProviderImpl implements SecurityContextProvider {
     public UserVO getCurrentUser() {
         SecurityContext securityContext = SecurityContextHolder.getContext();
         if (securityContext != null) {
-            User user = userRepo.findByEmail(securityContext.getAuthentication().getName());
+            String login = securityContext.getAuthentication().getName();
+            User user = userRepo.findOne(where(emailIs(login)).or(usernameIs(login)));
             if (user != null) {
                 return mapper.map(user, UserVO.class);
             }
+        }
+
+        return null;
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public User getConnectedUser() {
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        if (securityContext != null) {
+            String login = securityContext.getAuthentication().getName();
+            return userRepo.findOne(where(emailIs(login)).or(usernameIs(login)));
         }
 
         return null;
