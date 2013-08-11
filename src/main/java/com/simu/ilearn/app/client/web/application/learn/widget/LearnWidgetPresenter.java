@@ -12,7 +12,7 @@ import com.simu.ilearn.app.client.place.NameTokens;
 import com.simu.ilearn.app.client.rest.LearnService;
 import com.simu.ilearn.app.client.web.application.learn.event.LearnChangedEvent;
 import com.simu.ilearn.common.client.rest.AsyncCallbackImpl;
-import com.simu.ilearn.common.shared.dispatch.Response;
+import com.simu.ilearn.common.shared.dispatch.NoResult;
 import com.simu.ilearn.common.shared.vo.LearnVO;
 
 import javax.inject.Inject;
@@ -54,10 +54,20 @@ public class LearnWidgetPresenter extends PresenterWidget<LearnWidgetPresenter.M
 
     @Override
     public void delete() {
-        dispatcher.execute(learnService.delete(learn.getId()), new AsyncCallbackImpl<Response>() {
+        dispatcher.execute(learnService.delete(learn.getId()), new AsyncCallbackImpl<NoResult>() {
             @Override
-            public void onReceive(Response response) {
+            public void onReceive(NoResult response) {
                 LearnChangedEvent.fire(this, learn, LearnChangedEvent.MyType.DELETE);
+            }
+        });
+    }
+
+    @Override
+    public void archive() {
+        dispatcher.execute(learnService.archive(learn.getId()), new AsyncCallbackImpl<NoResult>() {
+            @Override
+            public void onReceive(NoResult response) {
+                LearnChangedEvent.fire(this, learn, LearnChangedEvent.MyType.ARCHIVED);
             }
         });
     }

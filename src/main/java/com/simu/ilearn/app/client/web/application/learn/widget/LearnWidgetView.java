@@ -6,7 +6,6 @@ import com.google.gwt.event.dom.client.MouseOutHandler;
 import com.google.gwt.event.dom.client.MouseOverEvent;
 import com.google.gwt.event.dom.client.MouseOverHandler;
 import com.google.gwt.i18n.client.DateTimeFormat;
-import com.google.gwt.text.client.DateTimeFormatRenderer;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -16,6 +15,7 @@ import com.google.gwt.user.client.ui.SimpleLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
+import com.simu.ilearn.common.shared.constants.GlobalParameters;
 import com.simu.ilearn.common.shared.vo.LearnVO;
 
 public class LearnWidgetView extends ViewWithUiHandlers<LearnWidgetUiHandlers> implements LearnWidgetPresenter.MyView {
@@ -53,10 +53,10 @@ public class LearnWidgetView extends ViewWithUiHandlers<LearnWidgetUiHandlers> i
 
     @Override
     public void setData(LearnVO article) {
-        DateTimeFormatRenderer dateRenderer = new DateTimeFormatRenderer(DateTimeFormat.getFormat("dd-MM-yyyy ' à ' HH:mm"));
+        DateTimeFormat dateRenderer = DateTimeFormat.getFormat(GlobalParameters.DATE_TIME_FORMAT);
         title.setText(article.getTitle());
         summary.setText(article.getContent());
-        created.setText(dateRenderer.render(article.getCreated()));
+        created.setText(dateRenderer.format(article.getCreated()));
     }
 
     @UiHandler("title")
@@ -67,5 +67,10 @@ public class LearnWidgetView extends ViewWithUiHandlers<LearnWidgetUiHandlers> i
     @UiHandler("delete")
     void onDeleteClicked(ClickEvent event) {
         getUiHandlers().delete();
+    }
+
+    @UiHandler("archive")
+    void onArchiveClicked(ClickEvent event) {
+        getUiHandlers().archive();
     }
 }

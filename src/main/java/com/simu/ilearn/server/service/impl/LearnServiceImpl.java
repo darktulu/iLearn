@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 import static com.simu.ilearn.server.repos.spec.LearnSpec.ownerIs;
+import static com.simu.ilearn.server.repos.spec.LearnSpec.statusIn;
 import static org.springframework.data.jpa.domain.Specifications.where;
 
 @Service
@@ -29,10 +30,11 @@ public class LearnServiceImpl implements LearnService {
     private SecurityContextProvider securityProvider;
 
     @Override
-    public Long create(LearnVO entity) {
-        entity.setCreated(new Date());
-        entity.setOwner(securityProvider.getCurrentUser());
-        return learnRepo.save(mapper.map(entity, Learn.class)).getId();
+    public Long create(LearnVO learn) {
+        learn.setCreated(new Date());
+        learn.setStatus(LearnVO.Status.ACTIVE);
+        learn.setOwner(securityProvider.getCurrentUser());
+        return learnRepo.save(mapper.map(learn, Learn.class)).getId();
     }
 
     @Override
@@ -49,7 +51,8 @@ public class LearnServiceImpl implements LearnService {
     @Transactional(readOnly = true)
     public List<LearnVO> loadAll() {
         List<LearnVO> result = Lists.newArrayList();
-        for (Learn entity : learnRepo.findAll(where(ownerIs(securityProvider.getConnectedUser())))) {
+        for (Learn entity : learnRepo.findAll(where(ownerIs(securityProvider.getConnectedUser()))
+                .and(statusIn(Learn.Status.ACTIVE)))) {
             result.add(mapper.map(entity, LearnVO.class));
         }
         return result;
@@ -59,5 +62,12 @@ public class LearnServiceImpl implements LearnService {
     @Transactional(readOnly = true)
     public LearnVO loadOne(Long id) {
         return mapper.map(learnRepo.findOne(id), LearnVO.class);
+    }
+
+    @Override
+    public void archive(Long id) {
+        Learn learn = learnRepo.findOne(id);
+        learn.setStatus(Learn.Status.ARCHIVED);
+        learnRepo.save(learn);
     }
 }

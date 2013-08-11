@@ -2,20 +2,13 @@ package com.simu.ilearn.app.client.rest;
 
 import com.gwtplatform.dispatch.shared.Action;
 import com.gwtplatform.dispatch.shared.rest.RestService;
-import com.simu.ilearn.common.shared.dispatch.GetResult;
-import com.simu.ilearn.common.shared.dispatch.GetResults;
-import com.simu.ilearn.common.shared.dispatch.Response;
-import com.simu.ilearn.common.shared.dispatch.ValidatedResponse;
+import com.simu.ilearn.common.shared.dispatch.*;
 import com.simu.ilearn.common.shared.rest.PathParameter;
 import com.simu.ilearn.common.shared.rest.ResourcesPath;
 import com.simu.ilearn.common.shared.rest.RestParameter;
 import com.simu.ilearn.common.shared.vo.LearnVO;
 
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 
 @Path(ResourcesPath.LEARN)
 public interface LearnService extends RestService {
@@ -24,7 +17,7 @@ public interface LearnService extends RestService {
 
     @DELETE
     @Path(PathParameter.ID)
-    Action<Response> delete(@PathParam(RestParameter.ID) Long id);
+    Action<NoResult> delete(@PathParam(RestParameter.ID) Long id);
 
     @GET
     Action<GetResults<LearnVO>> loadAll();
@@ -32,4 +25,8 @@ public interface LearnService extends RestService {
     @GET
     @Path(PathParameter.ID)
     Action<GetResult<LearnVO>> loadOne(@PathParam(RestParameter.ID) Long id);
+
+    @PUT
+    @Path(PathParameter.ID)
+    Action<NoResult> archive(@PathParam(RestParameter.ID) Long id);
 }

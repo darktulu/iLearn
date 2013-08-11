@@ -18,6 +18,7 @@ package com.simu.ilearn.app.client.web.application.learn;
 
 import com.google.gwt.inject.client.assistedinject.GinFactoryModuleBuilder;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
+import com.simu.ilearn.app.client.web.application.learn.renderer.TagCellFactory;
 import com.simu.ilearn.app.client.web.application.learn.widget.*;
 
 public class LearnModule extends AbstractPresenterModule {
@@ -34,5 +35,6 @@ public class LearnModule extends AbstractPresenterModule {
         bindSharedView(LearnWidgetPresenter.MyView.class, LearnWidgetView.class);
 
         install(new GinFactoryModuleBuilder().build(LearnWidgetFactory.class));
+        install(new GinFactoryModuleBuilder().build(TagCellFactory.class));
     }
 }
