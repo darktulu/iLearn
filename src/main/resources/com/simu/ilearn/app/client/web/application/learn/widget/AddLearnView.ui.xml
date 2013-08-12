@@ -8,11 +8,12 @@
             padding: 10px 10px 10px 20px;
             background-color: #efeff0;
             border: 1px solid #cbcbcb;
-            width: 550px;
+            width: 640px;
         }
 
         .myButton {
-            float: right;
+            margin-right: 5px;
+            display: inline-block;
             height: 80px;
             width: 70px;
             color: #444;
@@ -34,12 +35,32 @@
             background-color: #f5f5f5;
             border: 1px solid rgba(0, 0, 0, 0.2);
         }
+
+        .buttons {
+            display: inline-block;
+            float: right;
+        }
+
+        .hoverDiv {
+            display: inline;
+            position: absolute;
+            top: 20px;
+            margin-left: 180px;
+            padding: 10px 10px 0 10px;
+            background-color: #efeff0;
+            border: 1px solid #cbcbcb;
+
+        }
     </ui:style>
     <g:HTMLPanel styleName="{style.learn}">
         <s:LearnEditor ui:field="learnEditor"/>
-        <b:Button ui:field="submit" styleName="{style.myButton}" icon="OK"/>
-
-        <g:TextBox ui:field="tag"/>
+        <div class="{style.buttons}">
+            <b:Button ui:field="submit" styleName="{style.myButton}" icon="OK"/>
+            <b:Button ui:field="addTag" styleName="{style.myButton}" icon="TAG"/>
+            <g:HTMLPanel styleName="{style.hoverDiv}" ui:field="addTagPanel">
+                <g:SuggestBox ui:field="tag"/>
+            </g:HTMLPanel>
+        </div>
         <cell:CellList ui:field="tags"/>
     </g:HTMLPanel>
 </ui:UiBinder>

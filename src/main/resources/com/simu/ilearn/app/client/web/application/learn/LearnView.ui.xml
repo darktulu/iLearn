@@ -19,7 +19,7 @@
     <g:HTMLPanel addStyleNames="{style.body}">
 
         <div class="{style.wrapper}">
-            <g:HTMLPanel ui:field="addPanel" width="582px" addStyleNames="{style.center}"/>
+            <g:HTMLPanel ui:field="addPanel" width="672px" addStyleNames="{style.center}"/>
         </div>
 
         <div class="{style.wrapper}">

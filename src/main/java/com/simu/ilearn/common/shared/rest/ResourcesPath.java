@@ -5,4 +5,5 @@ public class ResourcesPath {
     public static final String REGISTRATION = "/registration";
     public static final String ENTITY = "/entity";
     public static final String LEARN = "/learn";
+    public static final String TAG = "/tag";
 }

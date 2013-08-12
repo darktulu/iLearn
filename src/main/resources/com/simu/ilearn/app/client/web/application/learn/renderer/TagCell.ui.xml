@@ -1,9 +1,14 @@
-<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:g="urn:import:com.google.gwt.user.client.ui">
     <ui:with field='title' type='java.lang.String'/>
     <ui:with field='description' type='java.lang.String'/>
 
     <div>
         <ui:text from="{title}"/>
         <ui:text from="{description}"/>
+        <div>
+            <a href="javascript:;" class="bouton bouton-mini" ui:field="close">
+                <i class="icon-close"/>
+            </a>
+        </div>
     </div>
 </ui:UiBinder>
