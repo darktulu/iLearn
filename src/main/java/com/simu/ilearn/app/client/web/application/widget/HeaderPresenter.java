@@ -20,6 +20,7 @@ import com.simu.ilearn.common.client.widget.search.AdvancedSearchPresenter;
 import com.simu.ilearn.common.client.widget.search.event.FireSearchEvent;
 import com.simu.ilearn.common.client.widget.search.type.SearchType;
 import com.simu.ilearn.common.shared.dispatch.GetResult;
+import com.simu.ilearn.common.shared.dispatch.NoResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -117,9 +118,9 @@ public class HeaderPresenter extends PresenterWidget<HeaderPresenter.MyView>
 
     @Override
     public void logout() {
-        dispatcher.execute(authenticationService.logout(), new AsyncCallbackImpl<GetResult<Boolean>>() {
+        dispatcher.execute(authenticationService.logout(), new AsyncCallbackImpl<NoResult>() {
             @Override
-            public void onReceive(GetResult<Boolean> response) {
+            public void onReceive(NoResult response) {
                 bootstrapper.onBootstrap();
             }
         });
