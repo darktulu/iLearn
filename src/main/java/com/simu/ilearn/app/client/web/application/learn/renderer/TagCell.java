@@ -44,7 +44,6 @@ public class TagCell extends AbstractCell<TagVO> {
                                ValueUpdater<TagVO> valueUpdater) {
         selectedTag = value;
         uiRenderer.onBrowserEvent(this, event, parent);
-
     }
 
     @UiHandler("close")
