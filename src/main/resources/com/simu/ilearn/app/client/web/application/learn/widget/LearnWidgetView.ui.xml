@@ -1,6 +1,7 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:b='urn:import:com.github.gwtbootstrap.client.ui'
-             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:cell='urn:import:com.google.gwt.user.cellview.client'>
     <ui:style>
         .title {
             text-shadow: 0 0 1px rgba(136, 136, 136, 0.3);
@@ -30,6 +31,13 @@
             text-shadow: 0 0 1px rgba(136, 136, 136, 0.3);
             background-color: whitesmoke;
             border-top: solid 1px #ccc;
+            padding: 10px 10px 5px 10px;
+        }
+
+        .tags {
+            color: dimgrey;
+            font-size: 10px;
+            text-shadow: 0 0 1px rgba(136, 136, 136, 0.3);
             padding: 10px 10px 5px 10px;
         }
 
@@ -82,15 +90,23 @@
                     </g:HTMLPanel>
                 </g:HTMLPanel>
             </g:center>
+
             <g:south size="40">
                 <g:HTMLPanel addStyleNames="{style.sub}">
                     <g:Label ui:field="created" addStyleNames="{style.inline}"/>
                     <g:HTMLPanel addStyleNames="{style.toolbar}" ui:field="toolbar" visible="false">
-                        <b:Button addStyleNames="{style.inline}" icon="FOLDER_OPEN" styleName="{style.myButton}"/>
-                        <b:Button addStyleNames="{style.inline}" icon="TRASH" styleName="{style.myButton}" ui:field="delete"/>
+                        <b:Button addStyleNames="{style.inline}" icon="FOLDER_OPEN" styleName="{style.myButton}"
+                                  ui:field="archive"/>
+                        <b:Button addStyleNames="{style.inline}" icon="TRASH" styleName="{style.myButton}"
+                                  ui:field="delete"/>
                     </g:HTMLPanel>
                 </g:HTMLPanel>
             </g:south>
+            <g:east size="80">
+                <g:HTMLPanel addStyleNames="{style.tags}">
+                    <cell:CellList ui:field="tags"/>
+                </g:HTMLPanel>
+            </g:east>
         </g:DockLayoutPanel>
     </g:SimpleLayoutPanel>
 </ui:UiBinder>

@@ -1,0 +1,24 @@
+import com.simu.ilearn.common.shared.vo.LearnVO
+import com.simu.ilearn.common.shared.vo.TagVO
+import com.google.common.base.Strings;
+
+rule "spring"
+    when
+        $t :TagVO(title contains "spring")
+    then
+        $t.setColor("#367B09");
+end
+
+rule "activiti"
+    when
+        $t : TagVO(title contains "activiti")
+    then
+        $t.setColor("#007DC3");
+end
+
+rule "ubuntu"
+    when
+        $t : TagVO(title contains "ubuntu")
+    then
+        $t.setColor("#C03F11");
+end

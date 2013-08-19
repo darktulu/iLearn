@@ -28,18 +28,14 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.simu.ilearn.app.client.place.NameTokens;
-import com.simu.ilearn.app.client.resource.message.MessageBundle;
 import com.simu.ilearn.app.client.rest.LearnService;
 import com.simu.ilearn.app.client.web.application.ApplicationPresenter;
-import com.simu.ilearn.app.client.web.application.learn.widget.LearnWidgetFactory;
 import com.simu.ilearn.common.client.rest.AsyncCallbackImpl;
 import com.simu.ilearn.common.client.security.LoggedInGatekeeper;
 import com.simu.ilearn.common.shared.dispatch.GetResult;
-import com.simu.ilearn.common.shared.dispatch.GetResults;
 import com.simu.ilearn.common.shared.vo.LearnVO;
 
 import javax.inject.Inject;
-import java.util.List;
 
 public class LearnDetailPresenter extends Presenter<LearnDetailPresenter.MyView, LearnDetailPresenter.MyProxy>
         implements LearnDetailUiHandlers {

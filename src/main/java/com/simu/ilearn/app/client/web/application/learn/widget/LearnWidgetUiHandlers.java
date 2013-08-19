@@ -6,4 +6,6 @@ public interface LearnWidgetUiHandlers extends UiHandlers {
     void showDetail();
 
     void delete();
+
+    void archive();
 }

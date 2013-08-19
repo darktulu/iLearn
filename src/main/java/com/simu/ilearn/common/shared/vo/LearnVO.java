@@ -11,6 +11,7 @@ public class LearnVO {
     private Date created;
     private UserVO owner;
     private List<TagVO> tags;
+    private Status status;
 
     public Long getId() {
         return id;
@@ -66,5 +67,17 @@ public class LearnVO {
 
     public void setTags(List<TagVO> tags) {
         this.tags = tags;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public enum Status {
+        ARCHIVED, ACTIVE
     }
 }

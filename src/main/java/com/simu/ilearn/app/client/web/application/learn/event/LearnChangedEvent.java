@@ -10,7 +10,7 @@ public class LearnChangedEvent extends GwtEvent<LearnChangedEvent.LearnChangedHa
         void onLearnChanged(LearnChangedEvent event);
     }
 
-    public enum MyType {ADD, DELETE}
+    public enum MyType {ADD, DELETE, ARCHIVED}
 
     private static final Type<LearnChangedHandler> TYPE = new Type<LearnChangedHandler>();
 

@@ -20,7 +20,7 @@
             </g:center>
 
             <g:north size="50">
-                <g:SimpleLayoutPanel ui:field="siderDisplay"/>
+                <g:SimpleLayoutPanel ui:field="menuDisplay"/>
             </g:north>
         </g:DockLayoutPanel>
     </g:SimpleLayoutPanel>
