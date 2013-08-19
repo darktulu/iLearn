@@ -19,7 +19,6 @@ import com.simu.ilearn.common.client.widget.search.AdvancedSearchFactory;
 import com.simu.ilearn.common.client.widget.search.AdvancedSearchPresenter;
 import com.simu.ilearn.common.client.widget.search.event.FireSearchEvent;
 import com.simu.ilearn.common.client.widget.search.type.SearchType;
-import com.simu.ilearn.common.shared.dispatch.GetResult;
 import com.simu.ilearn.common.shared.dispatch.NoResult;
 
 import java.util.ArrayList;

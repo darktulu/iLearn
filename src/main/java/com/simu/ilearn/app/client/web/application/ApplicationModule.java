@@ -22,8 +22,8 @@ import com.simu.ilearn.app.client.web.application.learn.LearnModule;
 import com.simu.ilearn.app.client.web.application.widget.HeaderPresenter;
 import com.simu.ilearn.app.client.web.application.widget.HeaderUiHandlers;
 import com.simu.ilearn.app.client.web.application.widget.HeaderView;
-import com.simu.ilearn.app.client.web.application.widget.SiderHolderPresenter;
-import com.simu.ilearn.app.client.web.application.widget.SiderHolderView;
+import com.simu.ilearn.app.client.web.application.widget.MenuPresenter;
+import com.simu.ilearn.app.client.web.application.widget.MenuView;
 
 public class ApplicationModule extends AbstractPresenterModule {
     @Override
@@ -38,7 +38,7 @@ public class ApplicationModule extends AbstractPresenterModule {
 
         bindSingletonPresenterWidget(HeaderPresenter.class, HeaderPresenter.MyView.class,
                 HeaderView.class);
-        bindSingletonPresenterWidget(SiderHolderPresenter.class, SiderHolderPresenter.MyView.class,
-                SiderHolderView.class);
+        bindSingletonPresenterWidget(MenuPresenter.class, MenuPresenter.MyView.class,
+                MenuView.class);
     }
 }
