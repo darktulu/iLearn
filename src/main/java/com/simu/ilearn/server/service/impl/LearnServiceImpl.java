@@ -7,6 +7,7 @@ import com.simu.ilearn.server.repos.LearnRepo;
 import com.simu.ilearn.server.security.SecurityContextProvider;
 import com.simu.ilearn.server.service.LearnService;
 import com.simu.ilearn.server.util.MyModelMapper;
+import org.drools.command.CommandFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,18 +23,23 @@ import static org.springframework.data.jpa.domain.Specifications.where;
 @Service
 @Transactional
 public class LearnServiceImpl implements LearnService {
-    @Autowired
+    @Inject
     private LearnRepo learnRepo;
     @Inject
     private MyModelMapper mapper;
     @Inject
     private SecurityContextProvider securityProvider;
+    @Inject
+    private DroolsServiceImpl droolsService;
 
     @Override
     public Long create(LearnVO learn) {
         learn.setCreated(new Date());
         learn.setStatus(LearnVO.Status.ACTIVE);
         learn.setOwner(securityProvider.getCurrentUser());
+
+        droolsService.getKsession().execute(CommandFactory.newInsertElements(learn.getTags()));
+
         return learnRepo.save(mapper.map(learn, Learn.class)).getId();
     }
 
