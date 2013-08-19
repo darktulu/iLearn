@@ -1,0 +1,19 @@
+.cellListWidget {
+    display: inline-block;
+}
+
+.cellListOddItem, .cellListEvenItem {
+}
+
+.cellListOddItem:hover, .cellListEvenItem:hover {
+}
+
+.cellListKeyboardSelectedItem {
+}
+
+@sprite .cellListSelectedItem {
+    gwt-image: 'cellListSelectedBackground';
+    color: white;
+    height: auto;
+    overflow: visible;
+}
