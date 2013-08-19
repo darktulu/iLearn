@@ -55,4 +55,12 @@ public class LearnController extends BaseController {
     public GetResult<LearnVO> loadOne(@PathVariable(RestParameter.ID) Long id) {
         return new GetResult<LearnVO>(learnService.loadOne(id));
     }
+
+    @RequestMapping(method = RequestMethod.PUT, value = PathParameter.ID)
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    public NoResult archive(@PathVariable(RestParameter.ID) Long id) {
+        learnService.archive(id);
+        return new NoResult();
+    }
 }

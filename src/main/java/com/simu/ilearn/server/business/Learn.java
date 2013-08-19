@@ -1,12 +1,6 @@
 package com.simu.ilearn.server.business;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -21,8 +15,10 @@ public class Learn {
     private Date created;
     @ManyToOne
     private User owner;
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Tag> tags;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     public Long getId() {
         return id;
@@ -79,4 +75,14 @@ public class Learn {
     public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public enum Status {ARCHIVED, ACTIVE}
 }

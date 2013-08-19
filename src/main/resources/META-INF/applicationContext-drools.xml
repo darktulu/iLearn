@@ -5,7 +5,7 @@
 
     <drools:kbase id="kbase">
         <drools:resources >
-            <!--<drools:resource type="DRL" source="classpath:META-INF/rules/helloWorld.drl" />-->
+            <drools:resource type="DRL" source="classpath:META-INF/rules/tag-color.drl" />
         </drools:resources>
     </drools:kbase>
 

@@ -36,4 +36,13 @@ public class LearnSpec {
             }
         };
     }
+
+    public static Specification<Learn> statusIn(final Learn.Status... status) {
+        return new Specification<Learn>() {
+            @Override
+            public Predicate toPredicate(Root<Learn> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+                return root.<Learn.Status>get("status").in(status);
+            }
+        };
+    }
 }

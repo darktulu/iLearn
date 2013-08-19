@@ -16,17 +16,19 @@
 
 package com.simu.ilearn.app.client.web.application.widget;
 
-import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.inject.Inject;
-import com.gwtplatform.mvp.client.ViewImpl;
+import com.google.web.bindery.event.shared.EventBus;
+import com.gwtplatform.mvp.client.PresenterWidget;
+import com.gwtplatform.mvp.client.View;
 
-public class SiderHolderView extends ViewImpl implements SiderHolderPresenter.MyView {
-    public interface Binder extends UiBinder<Widget, SiderHolderView> {
+import javax.inject.Inject;
+
+public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView> {
+    public interface MyView extends View {
     }
 
     @Inject
-    public SiderHolderView(final Binder uiBinder) {
-        initWidget(uiBinder.createAndBindUi(this));
+    MenuPresenter(EventBus eventBus,
+                  MyView view) {
+        super(eventBus, view);
     }
 }

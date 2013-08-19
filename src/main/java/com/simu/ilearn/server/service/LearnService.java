@@ -33,4 +33,6 @@ public interface LearnService {
     void show(@Valid LearnVO learn);
 
     LearnVO loadOne(Long id);
+
+    void archive(Long id);
 }

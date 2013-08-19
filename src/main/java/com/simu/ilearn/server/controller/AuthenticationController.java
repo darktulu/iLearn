@@ -1,6 +1,7 @@
 package com.simu.ilearn.server.controller;
 
 import com.simu.ilearn.common.shared.dispatch.GetResult;
+import com.simu.ilearn.common.shared.dispatch.NoResult;
 import com.simu.ilearn.common.shared.dto.UserCredentials;
 import com.simu.ilearn.common.shared.rest.ResourcesPath;
 import com.simu.ilearn.common.shared.vo.UserVO;
@@ -36,9 +37,10 @@ public class AuthenticationController extends BaseController {
         return new GetResult<UserVO>(authenticationService.currentUser());
     }
 
-    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
-    public GetResult<Boolean> logout() {
-        return new GetResult<Boolean>(authenticationService.logout());
+    public NoResult logout() {
+        authenticationService.logout();
+        return new NoResult();
     }
 }

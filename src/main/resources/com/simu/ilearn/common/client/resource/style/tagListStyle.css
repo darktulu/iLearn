@@ -1,0 +1,31 @@
+.cellListWidget {
+    display: inline-block;
+    color: #438eb9;
+}
+
+.cellListOddItem, .cellListEvenItem {
+    margin: 10px 10px 0 0;
+    float: left;
+    padding: 2px 10px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-transition: opacity linear 0.2s, background-color linear 0.2s, border linear 0.2s;
+    -moz-transition: opacity linear 0.2s, background-color linear 0.2s, border linear 0.2s;
+    -o-transition: opacity linear 0.2s, background-color linear 0.2s, border linear 0.2s;
+}
+
+.cellListOddItem:hover, .cellListEvenItem:hover {
+    opacity: 1;
+    background-color: #f5f5f5;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.cellListKeyboardSelectedItem {
+}
+
+@sprite .cellListSelectedItem {
+    gwt-image: 'cellListSelectedBackground';
+    color: white;
+    height: auto;
+    overflow: visible;
+}
