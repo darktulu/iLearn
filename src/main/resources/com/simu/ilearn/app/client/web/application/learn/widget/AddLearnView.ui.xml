@@ -57,7 +57,7 @@
         <div class="{style.buttons}">
             <b:Button ui:field="submit" styleName="{style.myButton}" icon="OK"/>
             <b:Button ui:field="addTag" styleName="{style.myButton}" icon="TAG"/>
-            <g:HTMLPanel styleName="{style.hoverDiv}" ui:field="addTagPanel">
+            <g:HTMLPanel styleName="{style.hoverDiv}" ui:field="addTagPanel" visible="false">
                 <g:SuggestBox ui:field="tag"/>
             </g:HTMLPanel>
         </div>

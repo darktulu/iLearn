@@ -22,3 +22,11 @@ rule "ubuntu"
     then
         $t.setColor("#C03F11");
 end
+
+rule "default"
+    salience 100
+    when
+        $t : TagVO()
+    then
+        $t.setColor("gray");
+end
