@@ -13,7 +13,6 @@ public class Tag {
     private Long id;
     private String title;
     private String description;
-    private String color;
     @ManyToOne
     private Tag parent;
 
@@ -47,13 +46,5 @@ public class Tag {
 
     public void setParent(Tag parent) {
         this.parent = parent;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 }

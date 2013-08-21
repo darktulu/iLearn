@@ -1,5 +1,6 @@
 package com.simu.ilearn.server.repos.spec;
 
+import com.simu.ilearn.common.shared.type.LearnStatus;
 import com.simu.ilearn.server.business.Learn;
 import com.simu.ilearn.server.business.User;
 import org.springframework.data.jpa.domain.Specification;
@@ -37,11 +38,11 @@ public class LearnSpec {
         };
     }
 
-    public static Specification<Learn> statusIn(final Learn.Status... status) {
+    public static Specification<Learn> statusIn(final LearnStatus... status) {
         return new Specification<Learn>() {
             @Override
             public Predicate toPredicate(Root<Learn> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
-                return root.<Learn.Status>get("status").in(status);
+                return root.<LearnStatus>get("status").in(status);
             }
         };
     }
