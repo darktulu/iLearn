@@ -1,5 +1,7 @@
 package com.simu.ilearn.server.business;
 
+import com.simu.ilearn.common.shared.type.LearnStatus;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +20,7 @@ public class Learn {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Tag> tags;
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private LearnStatus status;
 
     public Long getId() {
         return id;
@@ -76,13 +78,11 @@ public class Learn {
         this.tags = tags;
     }
 
-    public Status getStatus() {
+    public LearnStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(LearnStatus status) {
         this.status = status;
     }
-
-    public enum Status {ARCHIVED, ACTIVE}
 }

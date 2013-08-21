@@ -23,6 +23,20 @@ rule "ubuntu"
         $t.setColor("#C03F11");
 end
 
+rule "gwt"
+    when
+        $t : TagVO(title contains "gwt")
+    then
+        $t.setColor("#F55837");
+end
+
+rule "drools"
+    when
+        $t : TagVO(title contains "drools")
+    then
+        $t.setColor("rgb(146, 85, 202)");
+end
+
 rule "default"
     salience 100
     when

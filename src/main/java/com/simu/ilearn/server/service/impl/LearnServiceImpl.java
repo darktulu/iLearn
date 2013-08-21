@@ -1,6 +1,7 @@
 package com.simu.ilearn.server.service.impl;
 
 import com.google.common.collect.Lists;
+import com.simu.ilearn.common.shared.type.LearnStatus;
 import com.simu.ilearn.common.shared.vo.LearnVO;
 import com.simu.ilearn.server.business.Learn;
 import com.simu.ilearn.server.repos.LearnRepo;
@@ -8,7 +9,6 @@ import com.simu.ilearn.server.security.SecurityContextProvider;
 import com.simu.ilearn.server.service.LearnService;
 import com.simu.ilearn.server.util.MyModelMapper;
 import org.drools.command.CommandFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,10 +35,8 @@ public class LearnServiceImpl implements LearnService {
     @Override
     public Long create(LearnVO learn) {
         learn.setCreated(new Date());
-        learn.setStatus(LearnVO.Status.ACTIVE);
+        learn.setStatus(LearnStatus.ACTIVE);
         learn.setOwner(securityProvider.getCurrentUser());
-
-        droolsService.getKsession().execute(CommandFactory.newInsertElements(learn.getTags()));
 
         return learnRepo.save(mapper.map(learn, Learn.class)).getId();
     }
@@ -57,9 +55,14 @@ public class LearnServiceImpl implements LearnService {
     @Transactional(readOnly = true)
     public List<LearnVO> loadAll() {
         List<LearnVO> result = Lists.newArrayList();
-        for (Learn entity : learnRepo.findAll(where(ownerIs(securityProvider.getConnectedUser()))
-                .and(statusIn(Learn.Status.ACTIVE)))) {
-            result.add(mapper.map(entity, LearnVO.class));
+        List<Learn> learns = learnRepo.findAll(where(ownerIs(securityProvider.getConnectedUser()))
+                .and(statusIn(LearnStatus.ACTIVE)));
+
+        for (Learn entity : learns) {
+            LearnVO learn = mapper.map(entity, LearnVO.class);
+            droolsService.getKsession().execute(CommandFactory.newInsertElements(learn.getTags()));
+
+            result.add(learn);
         }
         return result;
     }
@@ -73,7 +76,7 @@ public class LearnServiceImpl implements LearnService {
     @Override
     public void archive(Long id) {
         Learn learn = learnRepo.findOne(id);
-        learn.setStatus(Learn.Status.ARCHIVED);
+        learn.setStatus(LearnStatus.ARCHIVED);
         learnRepo.save(learn);
     }
 }
