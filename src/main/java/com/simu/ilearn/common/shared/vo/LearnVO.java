@@ -1,5 +1,7 @@
 package com.simu.ilearn.common.shared.vo;
 
+import com.simu.ilearn.common.shared.type.LearnStatus;
+
 import java.util.Date;
 import java.util.List;
 
@@ -11,7 +13,7 @@ public class LearnVO {
     private Date created;
     private UserVO owner;
     private List<TagVO> tags;
-    private Status status;
+    private LearnStatus status;
 
     public Long getId() {
         return id;
@@ -69,15 +71,11 @@ public class LearnVO {
         this.tags = tags;
     }
 
-    public Status getStatus() {
+    public LearnStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(LearnStatus status) {
         this.status = status;
-    }
-
-    public enum Status {
-        ARCHIVED, ACTIVE
     }
 }
