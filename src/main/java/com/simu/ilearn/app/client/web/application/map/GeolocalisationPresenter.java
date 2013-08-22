@@ -1,5 +1,6 @@
 package com.simu.ilearn.app.client.web.application.map;
 
+import com.google.gwt.maps.client.LoadApi;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.dispatch.shared.DispatchAsync;
 import com.gwtplatform.mvp.client.HasUiHandlers;
@@ -17,6 +18,7 @@ import com.simu.ilearn.common.client.security.LoggedInGatekeeper;
 import com.simu.ilearn.common.shared.vo.LocationVO;
 
 import javax.inject.Inject;
+import java.util.ArrayList;
 
 public class GeolocalisationPresenter extends Presenter<MyView, MyProxy>
         implements GeolocalisationUiHandlers {
@@ -24,6 +26,8 @@ public class GeolocalisationPresenter extends Presenter<MyView, MyProxy>
         void adjustMapSize();
 
         void setPositions(LocationVO location);
+
+        void drawMap();
     }
 
     @ProxyStandard
@@ -48,6 +52,7 @@ public class GeolocalisationPresenter extends Presenter<MyView, MyProxy>
 
     @Override
     protected void onReveal() {
+        loadMapApi();
         getView().adjustMapSize();
 //        LocationVO location = new LocationVO();
 //        location.setLatitude(5d);
@@ -62,5 +67,20 @@ public class GeolocalisationPresenter extends Presenter<MyView, MyProxy>
 //
 //            }
 //        });
+    }
+
+
+    private void loadMapApi() {
+        ArrayList<LoadApi.LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
+        loadLibraries.add(LoadApi.LoadLibrary.PLACES);
+
+        Runnable onLoad = new Runnable() {
+            @Override
+            public void run() {
+               getView().drawMap();
+            }
+        };
+
+        LoadApi.go(onLoad, loadLibraries, true);
     }
 }
