@@ -70,7 +70,11 @@ public class LearnServiceImpl implements LearnService {
     @Override
     @Transactional(readOnly = true)
     public LearnVO loadOne(Long id) {
-        return mapper.map(learnRepo.findOne(id), LearnVO.class);
+        LearnVO learn = mapper.map(learnRepo.findOne(id), LearnVO.class);
+
+        droolsService.getKsession().execute(CommandFactory.newInsertElements(learn.getTags()));
+
+        return learn;
     }
 
     @Override
