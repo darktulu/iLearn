@@ -1,9 +1,15 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:b='urn:import:com.github.gwtbootstrap.client.ui'>
 
     <ui:with field="resources" type="com.simu.ilearn.common.client.resource.SharedResources"/>
     <ui:with field="nameTokens" type="com.simu.ilearn.app.client.place.NameTokens"/>
 
     <g:HTMLPanel styleName="{resources.navListStyleCss.blueNavList}">
+        <b:NavList>
+            <b:NavLink ui:field="archive" text="archive" targetHistoryToken="{nameTokens.getLearn}" icon="FOLDER_OPEN"/>
+            <b:NavLink ui:field="home" text="home" targetHistoryToken="{nameTokens.getHome}" icon="HOME"/>
+            <b:NavLink ui:field="maps" text="maps" targetHistoryToken="{nameTokens.getMaps}" icon="MAP_MARKER"/>
+        </b:NavList>
     </g:HTMLPanel>
 </ui:UiBinder>

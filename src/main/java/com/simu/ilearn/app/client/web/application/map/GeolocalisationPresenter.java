@@ -23,11 +23,11 @@ import java.util.ArrayList;
 public class GeolocalisationPresenter extends Presenter<MyView, MyProxy>
         implements GeolocalisationUiHandlers {
     public interface MyView extends View, HasUiHandlers<GeolocalisationUiHandlers> {
-        void adjustMapSize();
-
         void setPositions(LocationVO location);
 
         void drawMap();
+
+        Boolean isLoaded();
     }
 
     @ProxyStandard
@@ -51,13 +51,23 @@ public class GeolocalisationPresenter extends Presenter<MyView, MyProxy>
     }
 
     @Override
+    public void checkLocalisations() {
+        for (int i = 1; i < 4; i++) {
+            LocationVO location = new LocationVO();
+            location.setId(new Long(i));
+            location.setLatitude(5d * i);
+            location.setLongitude(5d * i);
+            getView().setPositions(location);
+        }
+    }
+
+    @Override
     protected void onReveal() {
-        loadMapApi();
-        getView().adjustMapSize();
-//        LocationVO location = new LocationVO();
-//        location.setLatitude(5d);
-//        location.setLongitude(5d);
-//        getView().setPositions(location);
+        if (getView().isLoaded()) {
+            loadMapApi();
+        } else {
+            checkLocalisations();
+        }
     }
 
     private void loadEntities() {
@@ -77,7 +87,7 @@ public class GeolocalisationPresenter extends Presenter<MyView, MyProxy>
         Runnable onLoad = new Runnable() {
             @Override
             public void run() {
-               getView().drawMap();
+                getView().drawMap();
             }
         };
 

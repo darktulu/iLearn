@@ -4,21 +4,13 @@ import com.google.gwt.maps.client.MapOptions;
 import com.google.gwt.maps.client.MapTypeId;
 import com.google.gwt.maps.client.MapWidget;
 import com.google.gwt.maps.client.base.LatLng;
-import com.google.gwt.maps.client.controls.ControlPosition;
-import com.google.gwt.maps.client.controls.MapTypeControlOptions;
-import com.google.gwt.maps.client.controls.MapTypeStyle;
-import com.google.gwt.maps.client.controls.ZoomControlOptions;
-import com.google.gwt.maps.client.controls.ZoomControlStyle;
+import com.google.gwt.maps.client.controls.*;
 import com.google.gwt.maps.client.events.click.ClickMapEvent;
 import com.google.gwt.maps.client.events.click.ClickMapHandler;
 import com.google.gwt.maps.client.maptypes.MapTypeStyleElementType;
 import com.google.gwt.maps.client.maptypes.MapTypeStyleFeatureType;
 import com.google.gwt.maps.client.maptypes.MapTypeStyler;
-import com.google.gwt.maps.client.overlays.Animation;
-import com.google.gwt.maps.client.overlays.InfoWindow;
-import com.google.gwt.maps.client.overlays.InfoWindowOptions;
-import com.google.gwt.maps.client.overlays.Marker;
-import com.google.gwt.maps.client.overlays.MarkerOptions;
+import com.google.gwt.maps.client.overlays.*;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -49,20 +41,13 @@ public class GeolocalisationView extends ViewWithUiHandlers<GeolocalisationUiHan
         initWidget(uiBinder.createAndBindUi(this));
     }
 
-    @Override
-    public void adjustMapSize() {
-        mapWidget.triggerResize();
-    }
+//    @Override
+//    public void adjustMapSize() {
+//        mapWidget.triggerResize();
+//    }
 
     @Override
     public void setPositions(final LocationVO location) {
-        resetMarkers();
-
-        if (location.getLongitude() != null) {
-            mapWidget.setCenter(LatLng.newInstance(location.getLatitude(), location.getLongitude()));
-            mapWidget.setZoom(13);
-        }
-
         Float lat = location.getLatitude().floatValue();
         Float lng = location.getLongitude().floatValue();
 
@@ -99,6 +84,13 @@ public class GeolocalisationView extends ViewWithUiHandlers<GeolocalisationUiHan
         iw.open(mapWidget, marker);
     }
 
+    public Boolean isLoaded() {
+        if (!positions.isEmpty()) {
+            resetMarkers();
+        }
+        return mapWidget == null;
+    }
+
     public void drawMap() {
         ZoomControlOptions zoomControlOptions = ZoomControlOptions.newInstance();
         zoomControlOptions.setStyle(ZoomControlStyle.SMALL);
@@ -123,17 +115,21 @@ public class GeolocalisationView extends ViewWithUiHandlers<GeolocalisationUiHan
         mapTypeStyles[0] = mapTypeStyle;
         mapOptions.setMapTypeStyles(mapTypeStyles);
 
-        mapOptions.setZoom(5);
+        mapOptions.setZoom(8);
         mapOptions.setZoomControl(true);
         mapOptions.setZoomControlOptions(zoomControlOptions);
 
         mapOptions.setStreetViewControl(false);
+        StreetViewControlOptions streetViewControlOptions = StreetViewControlOptions.newInstance();
+        streetViewControlOptions.setPosition(ControlPosition.RIGHT_BOTTOM);
 
         mapWidget = new MapWidget(mapOptions);
         mapWidget.setCenter(LatLng.newInstance(GlobalParameters.MOR_LAT, GlobalParameters.MOR_LNG));
         mapWidget.setSize(GlobalParameters.WIDTH_MAP, GlobalParameters.HEIGHT_MAP);
         mapWidget.getBounds();
         geoPanel.setWidget(mapWidget);
+
+        getUiHandlers().checkLocalisations();
     }
 
     private void resetMarkers() {
