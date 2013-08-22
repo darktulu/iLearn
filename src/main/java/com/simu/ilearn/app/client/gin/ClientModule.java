@@ -26,8 +26,8 @@ public class ClientModule extends AbstractPresenterModule {
         bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
         bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.login);
         bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.login);
-        bindConstant().annotatedWith(RestApplicationPath.class).to("/rest");
-        bindConstant().annotatedWith(Names.named("importUrl")).to("/rest/import");
+        bindConstant().annotatedWith(RestApplicationPath.class).to("rest");
+        bindConstant().annotatedWith(Names.named("importUrl")).to("rest/import");
 
         bind(Resources.class).in(Singleton.class);
         bind(MessageBundle.class).in(Singleton.class);
