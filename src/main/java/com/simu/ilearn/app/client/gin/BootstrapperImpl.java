@@ -16,6 +16,7 @@
 
 package com.simu.ilearn.app.client.gin;
 
+import com.google.gwt.maps.client.LoadApi;
 import com.gwtplatform.mvp.client.Bootstrapper;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.PlaceRequest;
@@ -26,6 +27,7 @@ import com.simu.ilearn.app.client.place.NameTokens;
 import com.simu.ilearn.app.client.security.CurrentUserProvider;
 
 import javax.inject.Inject;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 public class BootstrapperImpl implements Bootstrapper {
@@ -57,8 +59,22 @@ public class BootstrapperImpl implements Bootstrapper {
         if (securityUtils.isLoggedIn()) {
             currentUserProvider.load(getCurrentUserCallback);
         } else {
-            placeManager.revealCurrentPlace();
+            loadMapApi();
         }
+    }
+
+    private void loadMapApi() {
+        ArrayList<LoadApi.LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
+        loadLibraries.add(LoadApi.LoadLibrary.PLACES);
+
+        Runnable onLoad = new Runnable() {
+            @Override
+            public void run() {
+                placeManager.revealCurrentPlace();
+            }
+        };
+
+        LoadApi.go(onLoad, loadLibraries, true);
     }
 
     private void onGetCurrentUser(UserVO currentUser) {

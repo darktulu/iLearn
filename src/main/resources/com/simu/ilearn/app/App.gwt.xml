@@ -21,6 +21,9 @@
     <inherits name="com.simu.ilearn.common.Common"/>
     <inherits name="com.gwtplatform.mvp.MvpWithEntryPoint"/>
 
+    <!--Google maps API-->
+    <inherits name='com.google.gwt.maps.Maps' />
+
     <source path='client'/>
 
     <extend-configuration-property name="gin.ginjector.modules" value="com.simu.ilearn.app.client.gin.ClientModule"/>

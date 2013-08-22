@@ -22,6 +22,7 @@ public class NameTokens {
     public static final String home = "!home";
     public static final String learn = "!learn";
     public static final String detail = "!detail";
+    public static final String maps = "!maps";
 
     public static String getLogin() {
         return login;
@@ -41,5 +42,9 @@ public class NameTokens {
 
     public static String getDetail() {
         return detail;
+    }
+
+    public static String getMaps() {
+        return maps;
     }
 }
