@@ -1,0 +1,25 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <ui:style>
+        .body {
+            background-color: #f5f5f5;
+            overflow: auto;
+        }
+
+        .wrapper {
+            margin: auto;
+            max-width: 1000px;
+            overflow: auto;
+        }
+
+        .center {
+            margin: auto;
+        }
+    </ui:style>
+    <g:HTMLPanel addStyleNames="{style.body}">
+
+        <div class="{style.wrapper}">
+            <g:SimplePanel ui:field="geoPanel"/>
+        </div>
+    </g:HTMLPanel>
+</ui:UiBinder>

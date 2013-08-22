@@ -12,6 +12,8 @@
     <inherits name="org.vectomatic.libgwtfile"/>
     <inherits name="com.google.gwt.xhr2.XMLHttpRequest2"/>
 
+    <inherits name='com.google.gwt.maps.Maps' />
+
     <source path='client'/>
     <source path='shared'/>
 </module>
