@@ -21,6 +21,8 @@ public class Learn {
     private List<Tag> tags;
     @Enumerated(EnumType.STRING)
     private LearnStatus status;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Location location;
 
     public Long getId() {
         return id;
@@ -84,5 +86,13 @@ public class Learn {
 
     public void setStatus(LearnStatus status) {
         this.status = status;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }

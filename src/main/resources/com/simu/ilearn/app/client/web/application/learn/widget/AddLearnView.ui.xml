@@ -49,10 +49,25 @@
             padding: 10px 10px 0 10px;
             background-color: #efeff0;
             border: 1px solid #cbcbcb;
+        }
 
+        .localisation {
+            color: #c4c4c4;
+            float: right;
+            position: absolute;
+            margin-left: 440px;
+            font-size: 20px;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .localisation:active, .localisation:hover {
+            color: #444;
+            text-decoration: none;
         }
     </ui:style>
     <g:HTMLPanel styleName="{style.learn}">
+        <b:Button ui:field="localisation" styleName="{style.localisation}" icon="MAP_MARKER"/>
         <s:LearnEditor ui:field="learnEditor"/>
         <div class="{style.buttons}">
             <b:Button ui:field="submit" styleName="{style.myButton}" icon="OK"/>

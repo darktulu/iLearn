@@ -13,7 +13,7 @@
         }
 
         .center {
-            margin: auto;
+            margin: 10px auto auto;
         }
     </ui:style>
     <g:HTMLPanel addStyleNames="{style.body}">

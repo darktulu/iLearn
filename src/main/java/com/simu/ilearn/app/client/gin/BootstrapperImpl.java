@@ -59,22 +59,8 @@ public class BootstrapperImpl implements Bootstrapper {
         if (securityUtils.isLoggedIn()) {
             currentUserProvider.load(getCurrentUserCallback);
         } else {
-            loadMapApi();
+            placeManager.revealCurrentPlace();
         }
-    }
-
-    private void loadMapApi() {
-        ArrayList<LoadApi.LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
-        loadLibraries.add(LoadApi.LoadLibrary.PLACES);
-
-        Runnable onLoad = new Runnable() {
-            @Override
-            public void run() {
-                placeManager.revealCurrentPlace();
-            }
-        };
-
-        LoadApi.go(onLoad, loadLibraries, true);
     }
 
     private void onGetCurrentUser(UserVO currentUser) {
