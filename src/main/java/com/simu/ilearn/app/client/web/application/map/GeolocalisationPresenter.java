@@ -11,10 +11,14 @@ import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.annotations.UseGatekeeper;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.simu.ilearn.app.client.place.NameTokens;
+import com.simu.ilearn.app.client.rest.LearnService;
 import com.simu.ilearn.app.client.web.application.ApplicationPresenter;
 import com.simu.ilearn.app.client.web.application.map.GeolocalisationPresenter.MyProxy;
 import com.simu.ilearn.app.client.web.application.map.GeolocalisationPresenter.MyView;
+import com.simu.ilearn.common.client.rest.AsyncCallbackImpl;
 import com.simu.ilearn.common.client.security.LoggedInGatekeeper;
+import com.simu.ilearn.common.shared.dispatch.GetResults;
+import com.simu.ilearn.common.shared.vo.LearnVO;
 import com.simu.ilearn.common.shared.vo.LocationVO;
 
 import javax.inject.Inject;
@@ -37,28 +41,34 @@ public class GeolocalisationPresenter extends Presenter<MyView, MyProxy>
     }
 
     private final DispatchAsync dispatcher;
+    private final LearnService learnService;
 
     @Inject
     public GeolocalisationPresenter(EventBus eventBus,
                                     MyView view,
                                     MyProxy proxy,
+                                    LearnService learnService,
                                     DispatchAsync dispatcher) {
         super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetMainContent);
 
         this.dispatcher = dispatcher;
+        this.learnService = learnService;
 
         getView().setUiHandlers(this);
     }
 
     @Override
     public void checkLocalisations() {
-        for (int i = 1; i < 4; i++) {
-            LocationVO location = new LocationVO();
-            location.setId(new Long(i));
-            location.setLatitude(5d * i);
-            location.setLongitude(5d * i);
-            getView().setPositions(location);
-        }
+        dispatcher.execute(learnService.loadAll(), new AsyncCallbackImpl<GetResults<LearnVO>>() {
+            @Override
+            public void onReceive(GetResults<LearnVO> response) {
+                for (LearnVO learn : response.getPayload()) {
+                    if (learn.getLocation() != null) {
+                        getView().setPositions(learn.getLocation());
+                    }
+                }
+            }
+        });
     }
 
     @Override
@@ -68,15 +78,6 @@ public class GeolocalisationPresenter extends Presenter<MyView, MyProxy>
         } else {
             checkLocalisations();
         }
-    }
-
-    private void loadEntities() {
-//        dispatcher.execute(learnService.loadAll(), new AsyncCallbackImpl<GetResults<LearnVO>>() {
-//            @Override
-//            public void onReceive(GetResults<LearnVO> response) {
-//
-//            }
-//        });
     }
 
 

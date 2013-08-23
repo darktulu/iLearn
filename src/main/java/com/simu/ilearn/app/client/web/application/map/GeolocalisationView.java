@@ -41,11 +41,6 @@ public class GeolocalisationView extends ViewWithUiHandlers<GeolocalisationUiHan
         initWidget(uiBinder.createAndBindUi(this));
     }
 
-//    @Override
-//    public void adjustMapSize() {
-//        mapWidget.triggerResize();
-//    }
-
     @Override
     public void setPositions(final LocationVO location) {
         Float lat = location.getLatitude().floatValue();
@@ -66,22 +61,6 @@ public class GeolocalisationView extends ViewWithUiHandlers<GeolocalisationUiHan
                 drawInfoWindow(localisation);
             }
         });
-    }
-
-    private void drawInfoWindow(final Marker marker) {
-        if (marker == null) {
-            return;
-        }
-
-        HorizontalPanel hp = new HorizontalPanel();
-
-        VerticalPanel vp = new VerticalPanel();
-
-        hp.add(vp);
-        InfoWindowOptions options = InfoWindowOptions.newInstance();
-        options.setContent(hp);
-        InfoWindow iw = InfoWindow.newInstance(options);
-        iw.open(mapWidget, marker);
     }
 
     public Boolean isLoaded() {
@@ -137,5 +116,21 @@ public class GeolocalisationView extends ViewWithUiHandlers<GeolocalisationUiHan
             marker.clear();
         }
         positions = new HashMap<Long, Marker>();
+    }
+
+    private void drawInfoWindow(final Marker marker) {
+        if (marker == null) {
+            return;
+        }
+
+        HorizontalPanel hp = new HorizontalPanel();
+
+        VerticalPanel vp = new VerticalPanel();
+
+        hp.add(vp);
+        InfoWindowOptions options = InfoWindowOptions.newInstance();
+        options.setContent(hp);
+        InfoWindow iw = InfoWindow.newInstance(options);
+        iw.open(mapWidget, marker);
     }
 }

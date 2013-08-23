@@ -1,5 +1,6 @@
 package com.simu.ilearn.app.client.web.application.learn.widget;
 
+import com.github.gwtbootstrap.client.ui.Button;
 import com.google.common.base.Strings;
 import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -36,12 +37,15 @@ public class AddLearnView extends ViewWithUiHandlers<AddLearnUiHandlers> impleme
     CellList<TagVO> tags;
     @UiField
     HTMLPanel addTagPanel;
+    @UiField
+    Button localisation;
 
     private final ListDataProvider<TagVO> dataProvider;
 
     @Inject
     public AddLearnView(final Binder uiBinder, LearnEditor learnEditor,
-                        ListDataProvider<TagVO> dataProvider, TagCellFactory tagCellFactory, TagListStyle tagListStyle) {
+                        ListDataProvider<TagVO> dataProvider, TagCellFactory tagCellFactory,
+                        TagListStyle tagListStyle) {
         this.learnEditor = learnEditor;
         this.dataProvider = dataProvider;
         this.tag = new SuggestBox(new MultiWordSuggestOracle());
@@ -89,6 +93,12 @@ public class AddLearnView extends ViewWithUiHandlers<AddLearnUiHandlers> impleme
     @UiHandler("addTag")
     void onAddTagClick(ClickEvent event) {
         addTagPanel.setVisible(!addTagPanel.isVisible());
+    }
+
+    @UiHandler("localisation")
+    void onLocalisationClick(ClickEvent event) {
+        localisation.setActive(!localisation.isActive());
+        getUiHandlers().setLocalisation(localisation.isActive());
     }
 
     @Override

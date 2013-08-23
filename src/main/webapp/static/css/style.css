@@ -1693,3 +1693,7 @@ input[type=checkbox].ace-switch.ace-switch-7:checked+.lbl::after {
 .input-prepend>.bouton>.caret, .input-append>.bouton>.caret, .input-prepend>.bouton-group>.bouton>.caret, .input-append>.bouton-group>.bouton>.caret, .input-prepend>.bouton.bouton-small>.caret, .input-append>.bouton.bouton-small>.caret, .input-prepend>.bouton-group>.bouton.bouton-small>.caret, .input-append>.bouton-group>.bouton.bouton-small>.caret {
     margin-top: 10px
 }
+
+.active {
+    color : #444 !important;
+}

@@ -1,6 +1,14 @@
-package com.simu.ilearn.common.shared.vo;
+package com.simu.ilearn.server.business;
 
-public class LocationVO {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Location {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Double longitude;
     private Double latitude;
