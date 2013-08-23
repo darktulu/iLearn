@@ -8,12 +8,6 @@
 
         .wrapper {
             margin: auto;
-            max-width: 1000px;
-            overflow: auto;
-        }
-
-        .center {
-            margin: auto;
         }
     </ui:style>
     <g:HTMLPanel addStyleNames="{style.body}">

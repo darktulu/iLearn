@@ -11,5 +11,5 @@ public class GlobalParameters {
     public static Double MOR_LNG = -7.09262;
 
     public static final String WIDTH_MAP = "100%";
-    public static final String HEIGHT_MAP = "400px";
+    public static final String HEIGHT_MAP = "600px";
 }

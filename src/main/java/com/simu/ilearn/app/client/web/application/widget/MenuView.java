@@ -16,7 +16,9 @@
 
 package com.simu.ilearn.app.client.web.application.widget;
 
+import com.github.gwtbootstrap.client.ui.NavLink;
 import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
@@ -24,6 +26,13 @@ import com.gwtplatform.mvp.client.ViewImpl;
 public class MenuView extends ViewImpl implements MenuPresenter.MyView {
     public interface Binder extends UiBinder<Widget, MenuView> {
     }
+
+    @UiField
+    NavLink archive;
+    @UiField
+    NavLink home;
+    @UiField
+    NavLink maps;
 
     @Inject
     public MenuView(final Binder uiBinder) {
